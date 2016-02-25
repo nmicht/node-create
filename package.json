@@ -1,0 +1,88 @@
+{
+  "name": "npm-package-generator",
+  "description": "an opinionated npm package template",
+  "author": "Ahmad Nassri <ahmad@ahmadnassri.com> (https://www.ahmadnassri.com/)",
+  "homepage": "https://github.com/ahmadnassri/npm-package-generator",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ahmadnassri/npm-package-generator.git"
+  },
+  "license": "ISC",
+  "main": "lib/generator.js",
+  "preferglobal": true,
+  "bin": {
+    "npm-package-generator": "lib/bin.js"
+  },
+  "keywords": [
+    "npm",
+    "package",
+    "generator"
+  ],
+  "engines": {
+    "node": ">=5"
+  },
+  "files": [
+    "bin",
+    "src",
+    "template"
+  ],
+  "bugs": {
+    "url": "https://github.com/ahmadnassri/npm-package-generator/issues"
+  },
+  "scripts": {
+    "compile": "babel -q src --out-dir lib",
+    "test": "tap test/*.js --timeout=120 --node-arg=--require --node-arg=babel-register --node-arg=--require --node-arg=babel-polyfill | tap-mocha-reporter spec",
+    "pretest": "standard && echint",
+    "coverage": "tap test/*.js --timeout=120 --coverage --nyc-arg=--require --nyc-arg=babel-register --nyc-arg=--require --nyc-arg=babel-polyfill",
+    "codeclimate": "nyc report --reporter=text-lcov | codeclimate-test-reporter",
+    "prepublish": "npm run compile",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+  },
+  "babel": {
+    "presets": [
+      "es2015-node5"
+    ]
+  },
+  "standard": {
+    "ignore": [
+      "lib/**",
+      "template/**",
+      "test/tmp/**"
+    ]
+  },
+  "echint": {
+    "ignore": [
+      "lib/**",
+      "test/tmp/**"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "devDependencies": {
+    "babel-cli": "^6.5.1",
+    "babel-preset-es2015-node5": "^1.1.2",
+    "codeclimate-test-reporter": "0.3.1",
+    "cz-conventional-changelog": "^1.1.5",
+    "echint": "^1.5.3",
+    "fs-readfile-promise": "^2.0.1",
+    "mkdirp": "^0.5.1",
+    "rimraf": "^2.5.2",
+    "semantic-release": "^4.3.5",
+    "standard": "^6.0.7",
+    "tap": "^5.6.0",
+    "tap-mocha-reporter": "0.0.24"
+  },
+  "dependencies": {
+    "commander": "^2.9.0",
+    "debug-log": "^1.0.0",
+    "dotenv": "^2.0.0",
+    "fs-writefile-promise": "^1.0.3",
+    "glob-promise": "^1.0.6",
+    "lodash.template": "^4.2.0",
+    "mkdirp-promise": "^1.0.3",
+    "read-files-promise": "^1.1.1"
+  }
+}
