@@ -42,7 +42,7 @@ tap.test('npm-package-generator', (t) => {
       .then((files) => {
         var file = path.dirname(files.pop())
 
-        assert.equal(path.relative(target, file), '..')
+        assert.equal(path.relative(path.resolve(target), file), '..')
       })
 
       .then(() => process.chdir(cwd)) // return to cwd
