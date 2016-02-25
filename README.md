@@ -89,6 +89,7 @@ npm install --save npm-package-generator
     -s, --semantic-release           run semantic-release-cli setup
     -i, --install                    Install Dependencies
     -q, --quiet                      hide npm install output
+
 ```
 
 ## API
