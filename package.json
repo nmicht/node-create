@@ -72,7 +72,7 @@
     "rimraf": "^2.5.2",
     "semantic-release": "^4.3.5",
     "standard": "^6.0.7",
-    "tap": "^5.6.0",
+    "tap": "^5.7.0",
     "tap-mocha-reporter": "0.0.24"
   },
   "dependencies": {
@@ -81,7 +81,7 @@
     "dotenv": "^2.0.0",
     "fs-writefile-promise": "^1.0.3",
     "glob-promise": "^1.0.6",
-    "lodash.template": "^4.2.0",
+    "lodash.template": "^4.2.1",
     "mkdirp-promise": "^1.0.3",
     "read-files-promise": "^1.1.1"
   }
