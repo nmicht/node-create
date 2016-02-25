@@ -14,8 +14,8 @@ I follow the below set of rules in all projects, `npm-package-generator` ensures
 
 - write in ES2015, compile into ES5
 - use the most permissive open source license *(currently ISC)*
-- follow a preferred folder tree & npm's default expected file naming *(see below)*
-- always expose your package's compiled library modules *(see folder tree below)*
+- follow a preferred folder tree & npm's default expected file naming *(see [below](#folder-tree))*
+- always expose your package's compiled library modules *(see [below](#folder-tree))*
 - keep your package lean, only include useful files (compiled & sources) for developers *(see package.json > files)*
 - use a standard template for `README` files.
 - use [`semantic-release`](https://github.com/semantic-release/semantic-release)
@@ -39,7 +39,7 @@ I follow the below set of rules in all projects, `npm-package-generator` ensures
 ├── LICENSE
 ├── package.json
 ├── README.md
-├── src (es6)
+├── src (ES2015)
 │   ├── bin.js
 │   └── index.js
 └── test
