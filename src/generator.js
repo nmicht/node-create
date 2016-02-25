@@ -26,7 +26,6 @@ const defaults = {
   website: process.env.NPM_AUTHOR_WEBSITE,
   semantic: false,
   install: false,
-  quiet: false,
   year: new Date().getFullYear()
 }
 
@@ -97,8 +96,7 @@ module.exports = function (packageName = process.env.NPM_PACKAGE_NAME, packagePa
 
     .then((files) => {
       if (opts.install) {
-        execFileSync('npm', ['update', '--save'], {
-          stdio: opts.quiet ? 'pipe' : 'inherit',
+        execFileSync('npm', ['update', '--silent', '--save'], {
           cwd: packagePath
         })
       }
@@ -108,8 +106,17 @@ module.exports = function (packageName = process.env.NPM_PACKAGE_NAME, packagePa
 
     .then((files) => {
       if (opts.install) {
-        execFileSync('npm', ['update', '--save-dev'], {
-          stdio: opts.quiet ? 'pipe' : 'inherit',
+        execFileSync('npm', ['update', '--silent', '--save-dev'], {
+          cwd: packagePath
+        })
+      }
+
+      return files
+    })
+
+    .then((files) => {
+      if (opts.semantic) {
+        execFileSync('semantic-release-cli', ['setup'], {
           cwd: packagePath
         })
       }

@@ -88,7 +88,6 @@ npm install --save npm-package-generator
     -w, --website <url>              Author Website
     -s, --semantic-release           run semantic-release-cli setup
     -i, --install                    Install Dependencies
-    -q, --quiet                      hide npm install output
 
 ```
 

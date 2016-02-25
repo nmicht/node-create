@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import cmd from 'commander'
-import generator from '../src/generator'
+import generator from './generator'
 import pkg from '../package'
 
 let packageName, packagePath
@@ -18,9 +18,8 @@ cmd
   .option('-e, --email <email>', 'Author Email')
   .option('-g, --github <username>', 'Github Username')
   .option('-w, --website <url>', 'Author Website')
-  .option('-s, --semantic-release', 'run semantic-release-cli setup', false)
-  .option('-i, --install', 'Install Dependencies')
-  .option('-q, --quiet', 'hide npm install output', true)
+  .option('-s, --no-semantic', 'run semantic-release-cli setup')
+  .option('-i, --no-install', 'Install Dependencies')
   .parse(process.argv)
 
 if (!packageName || !packagePath) {

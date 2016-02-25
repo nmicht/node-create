@@ -6,7 +6,6 @@ import read from 'fs-readfile-promise'
 import rimraf from 'rimraf'
 import tap from 'tap'
 
-// const cwd = process.cwd()
 const target = path.join('test', 'tmp')
 const options = {
   author: 'foo',
@@ -36,13 +35,13 @@ tap.test('npm-package-generator', (t) => {
   t.test('should use process.cwd', (assert) => {
     let cwd = process.cwd()
 
-    return mkdirp(target)
-      .then(() => process.chdir(target))
+    return mkdirp('/tmp/foo')
+      .then(() => process.chdir('/tmp/foo'))
       .then(() => generator('foo'))
       .then((files) => {
         var file = path.dirname(files.pop())
 
-        assert.equal(path.relative(path.resolve(target), file), '..')
+        assert.equal('/tmp/foo/test', file)
       })
 
       .then(() => process.chdir(cwd)) // return to cwd
@@ -91,7 +90,10 @@ tap.test('npm-package-generator', (t) => {
       quiet: true
     }
 
-    return generator('foo', target, opts)
+    let target = '/tmp/npm-package-genrator/test'
+
+    return mkdirp(target)
+      .then((dir) => generator('foo', target, opts))
       .then((files) => assert.ok(fs.existsSync(path.join(target, 'node_modules'))))
       .catch(assert.threw)
   })

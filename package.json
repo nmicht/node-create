@@ -31,9 +31,9 @@
   },
   "scripts": {
     "compile": "babel -q src --out-dir lib",
-    "test": "tap test/*.js --timeout=120 --node-arg=--require --node-arg=babel-register --node-arg=--require --node-arg=babel-polyfill | tap-mocha-reporter spec",
+    "test": "tap test/*.js --timeout=180 --node-arg=--require --node-arg=babel-register --node-arg=--require --node-arg=babel-polyfill | tap-mocha-reporter spec",
     "pretest": "standard && echint",
-    "coverage": "tap test/*.js --timeout=120 --coverage --nyc-arg=--require --nyc-arg=babel-register --nyc-arg=--require --nyc-arg=babel-polyfill",
+    "coverage": "tap test/*.js --timeout=180 --coverage --nyc-arg=--require --nyc-arg=babel-register --nyc-arg=--require --nyc-arg=babel-polyfill",
     "codeclimate": "nyc report --reporter=text-lcov | codeclimate-test-reporter",
     "prepublish": "npm run compile",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
