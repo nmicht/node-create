@@ -86,7 +86,7 @@ npm install --save npm-package-generator
     -e, --email <email>              Author Email
     -g, --github <username>          Github Username
     -w, --website <url>              Author Website
-    -s, --semantic-release           run semantic-release-cli setup
+    -s, --semantic                   run semantic-release-cli setup
     -i, --install                    Install Dependencies
 
 ```
