@@ -56,7 +56,9 @@
   },
   "devDependencies": {
     "babel-cli": "*",
+    "babel-polyfill": "*",
     "babel-preset-es2015": "*",
+    "babel-register": "*",
     "codeclimate-test-reporter": "*",
     "cz-conventional-changelog": "*",
     "echint": "*",

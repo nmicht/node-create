@@ -114,9 +114,11 @@ generator('my-awesome-package', '~/Projects/my-awesome-package', options)
 | `install`     | run `npm install` and update dependencies       | `false`                               |
 | `quiet`       | pipe npm output to `process.stdout`             | `false`                               |
 
-## License
-
-[ISC License](LICENSE) &copy; [Ahmad Nassri](https://www.ahmadnassri.com/)
+----
+> :copyright: [ahmadnassri.com](https://www.ahmadnassri.com/) &nbsp;&middot;&nbsp;
+> License: [ISC](LICENSE) &nbsp;&middot;&nbsp;
+> Github: [@ahmadnassri](https://github.com/ahmadnassri) &nbsp;&middot;&nbsp;
+> Twitter: [@ahmadnassri](https://twitter.com/ahmadnassri)
 
 [license-url]: https://github.com/ahmadnassri/npm-package-generator/blob/master/LICENSE
 

@@ -5,6 +5,7 @@ import mkdirp from 'mkdirp-promise'
 import path from 'path'
 import read from 'read-files-promise'
 import template from 'lodash.template'
+import url from 'url'
 import write from 'fs-writefile-promise'
 import { execFileSync } from 'child_process'
 
@@ -40,6 +41,9 @@ module.exports = function (packageName = process.env.NPM_PACKAGE_NAME, packagePa
 
   // assign name
   opts.name = packageName
+
+  // parse domain
+  opts.domain = url.parse(opts.website).hostname
 
   // use name if no description given
   opts.description = opts.description || packageName

@@ -12,7 +12,7 @@ const options = {
   description: 'foo bar',
   email: 'foo@bar.com',
   github: 'foo',
-  website: 'foo.com',
+  website: 'http://foo.com/',
   semantic: false
 }
 
@@ -52,6 +52,7 @@ tap.test('npm-package-generator', (t) => {
     return generator('foo', target, options)
       .then((files) => {
         assert.same(files, [
+          'test/tmp/.codeclimate.yml',
           'test/tmp/.editorconfig',
           'test/tmp/.gitignore',
           'test/tmp/.travis.yml',
@@ -69,7 +70,7 @@ tap.test('npm-package-generator', (t) => {
   t.test('should use environment variables', (assert) => {
     process.env.NPM_AUTHOR_EMAIL = 'foo@bar.com'
     process.env.NPM_AUTHOR_NAME = 'foo'
-    process.env.NPM_AUTHOR_WEBSITE = 'foo.com'
+    process.env.NPM_AUTHOR_WEBSITE = 'http://foo.com/'
     process.env.NPM_GITHUB_USERNAME = 'foo'
     process.env.NPM_PACKAGE_NAME = 'foobar'
 
