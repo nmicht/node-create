@@ -19,7 +19,6 @@
     "node": ">=0.10"
   },
   "files": [
-    "bin",
     "lib",
     "src"
   ],
@@ -61,6 +60,7 @@
     "codeclimate-test-reporter": "*",
     "cz-conventional-changelog": "*",
     "echint": "*",
+    "nyc": "*",
     "semantic-release": "*",
     "standard": "*",
     "tap": "*",
