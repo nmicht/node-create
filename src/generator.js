@@ -115,7 +115,7 @@ module.exports = function (packageName = process.env.NPM_PACKAGE_NAME, packagePa
     })
 
     .then((files) => {
-      if (opts.semantic) {
+      if (opts.install && opts.semantic) {
         execFileSync('semantic-release-cli', ['setup'], {
           cwd: packagePath
         })
