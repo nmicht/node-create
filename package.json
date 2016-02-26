@@ -22,7 +22,7 @@
     "node": ">=5"
   },
   "files": [
-    "bin",
+    "lib",
     "src",
     "template"
   ],
