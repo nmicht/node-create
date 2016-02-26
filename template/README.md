@@ -37,8 +37,6 @@ import ${name} from '${name}'
 ${name}()
 ```
 
-## License
-
 ----
 > :copyright: [${domain}](${website}) &nbsp;&middot;&nbsp;
 > License: [ISC](LICENSE) &nbsp;&middot;&nbsp;
