@@ -62,10 +62,10 @@
     }
   },
   "devDependencies": {
-    "babel-cli": "^6.5.1",
-    "babel-polyfill": "^6.5.0",
+    "babel-cli": "^6.6.0",
+    "babel-polyfill": "^6.6.1",
     "babel-preset-es2015-node5": "^1.1.2",
-    "babel-register": "^6.5.2",
+    "babel-register": "^6.6.0",
     "codeclimate-test-reporter": "0.3.1",
     "cz-conventional-changelog": "^1.1.5",
     "echint": "^1.5.3",
