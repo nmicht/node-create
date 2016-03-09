@@ -18,8 +18,8 @@ cmd
   .option('-e, --email <email>', 'Author Email')
   .option('-g, --github <username>', 'Github Username')
   .option('-w, --website <url>', 'Author Website')
-  .option('-s, --no-semantic', 'run semantic-release-cli setup')
-  .option('-i, --no-install', 'Install Dependencies')
+  .option('-i, --no-install', 'don\'t install dependencies')
+  .option('-s, --no-semantic', 'don\'t run semantic-release-cli setup')
   .parse(process.argv)
 
 if (!packageName || !packagePath) {
