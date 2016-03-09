@@ -30,7 +30,7 @@ const defaults = {
   year: new Date().getFullYear()
 }
 
-module.exports = function (packageName = process.env.NPM_PACKAGE_NAME, packagePath = process.cwd(), options = {}) {
+export default function (packageName = process.env.NPM_PACKAGE_NAME, packagePath = process.cwd(), options = {}) {
   // exit early
   if (!packageName) {
     throw new Error('missing package name')
@@ -120,9 +120,12 @@ module.exports = function (packageName = process.env.NPM_PACKAGE_NAME, packagePa
 
     .then((files) => {
       if (opts.install && opts.semantic) {
-        execFileSync('semantic-release-cli', ['setup'], {
-          cwd: packagePath
-        })
+        // TODO: semantic-release-cli cannot be run with exec since its interactive.
+        // execFileSync(path.join(paths.cwd, 'node_modules', '.bin', 'semantic-release-cli'), ['setup'], {
+        //   cwd: packagePath
+        // })
+
+        console.log('do not forget to run "semantic-release-cli setup"')
       }
 
       return files.sort()
