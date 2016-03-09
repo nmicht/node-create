@@ -43,7 +43,7 @@ ${name}()
 > Github: [@${github}](https://github.com/${github}) &nbsp;&middot;&nbsp;
 > Twitter: [@${github}](https://twitter.com/${github})
 
-[license-url]: https://github.com/${github}/${name}/blob/master/LICENSE
+[license-url]: http://choosealicense.com/licenses/isc/
 
 [travis-url]: https://travis-ci.org/${github}/${name}
 [travis-image]: https://img.shields.io/travis/${github}/${name}.svg?style=flat-square
