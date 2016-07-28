@@ -20,8 +20,6 @@ I follow the below set of rules in all projects, `npm-package-generator` ensures
 - use a standard template for `README` files.
 - use [`semantic-release`](https://github.com/semantic-release/semantic-release)
 - use [`EditorConfig`](http://editorconfig.org/) files *enforced by [`echint`](https://www.npmjs.com/package/echint)*
-- use [`commander`](https://www.npmjs.com/package/commander) to provide a CLI (Command Line Interface) *when applicable*
-- use [`debug-log`](https://www.npmjs.com/package/debug-log) to provide helpful debugging messages without the use of `console.log`
 - Testing
   - use [`tap`](https://www.npmjs.com/package/tap) for testing & to generate coverage reports
   - use container mode in [`travis`](https://travis-ci.org/) and leverage folder caching.
@@ -33,22 +31,26 @@ I follow the below set of rules in all projects, `npm-package-generator` ensures
 
 ```
 /package-name/
-├── lib (compiled)
-│   ├── bin.js
-│   └── index.js
+├── lib (compiled to ES5)
+│   ├── index.js
+│   ├── node4 (compiled to Node v4)
+│   │   └── index.js
+│   ├── node5 (compiled to Node v5)
+│   │   └── index.js
+│   └── node6 (compiled to Node v5)
+│       └── index.js
 ├── LICENSE
 ├── package.json
 ├── README.md
-├── src (ES2015)
-│   ├── bin.js
+├── src
 │   └── index.js
 └── test
     ├── fixtures
     └── index.js
 ```
 
-- `/lib`: ES5 compiled library files, this is the default exposed output.
-- `/src`: source library files: all common business logic, use this folder as heavily as possible
+- `/lib`: compiled library files, this is the default exposed output.
+- `/src`: source library files: all common business logic, use this folder for your code
 
 ### First Run
 
@@ -68,7 +70,7 @@ please reach out to share any feedback & contribution!
 ## Install
 
 ```sh
-npm install --save npm-package-generator
+npm install --production --save npm-package-generator
 ```
 
 ## Usage
@@ -86,7 +88,6 @@ npm install --save npm-package-generator
     -e, --email <email>              Author Email
     -g, --github <username>          Github Username
     -w, --website <url>              Author Website
-    -s, --semantic                   run semantic-release-cli setup
     -i, --install                    Install Dependencies
 
 ```
@@ -99,20 +100,19 @@ npm install --save npm-package-generator
 import generator from 'npm-package-generator'
 
 generator('my-awesome-package', '~/Projects/my-awesome-package', options)
-  .then((files) => console.log(files)) //-> [array of files created]
+  .then(files => console.log(files)) //-> [array of files created]
 ```
 
 #### options
 
-| option        | description                                     | default                               |
-| ------------- | ----------------------------------------------- | ------------------------------------- |
-| `author`      | author name                                     | `process.env.NPM_AUTHOR_NAME`         |
-| `description` | package description                             | `process.env.NPM_PACKAGE_DESCRIPTION` |
-| `email`       | author email                                    | `process.env.NPM_AUTHOR_EMAIL`        |
-| `website`     | author website                                  | `process.env.NPM_AUTHOR_WEBSITE`      |
-| `github`      | github account                                  | `process.env.NPM_GITHUB_USERNAME`     |
-| `install`     | run `npm install` and update dependencies       | `false`                               |
-| `quiet`       | pipe npm output to `process.stdout`             | `false`                               |
+| option        | description                               | default                               |
+| ------------- | ----------------------------------------- | ------------------------------------- |
+| `author`      | author name                               | `process.env.NPM_AUTHOR_NAME`         |
+| `description` | package description                       | `process.env.NPM_PACKAGE_DESCRIPTION` |
+| `email`       | author email                              | `process.env.NPM_AUTHOR_EMAIL`        |
+| `website`     | author website                            | `process.env.NPM_AUTHOR_WEBSITE`      |
+| `github`      | github account                            | `process.env.NPM_GITHUB_USERNAME`     |
+| `install`     | run `npm install` and update dependencies | `false`                               |
 
 ----
 > :copyright: [ahmadnassri.com](https://www.ahmadnassri.com/) &nbsp;&middot;&nbsp;
