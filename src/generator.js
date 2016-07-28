@@ -1,4 +1,3 @@
-import debuglog from 'debug-log'
 import dotenv from 'dotenv'
 import glob from 'glob-promise'
 import mkdirp from 'mkdirp-promise'
@@ -12,11 +11,9 @@ import { execFileSync } from 'child_process'
 // load configuration from environment
 dotenv.config({ silent: true })
 
-const debug = debuglog('npm-package-generator')
-
 const paths = {
   template: path.join(__dirname, '..', 'template'),
-  cwd: path.join(__dirname, '..')
+  root: path.join(__dirname, '..')
 }
 
 const defaults = {
@@ -25,12 +22,11 @@ const defaults = {
   email: process.env.NPM_AUTHOR_EMAIL,
   github: process.env.NPM_GITHUB_USERNAME,
   website: process.env.NPM_AUTHOR_WEBSITE,
-  semantic: false,
-  install: false,
+  install: true,
   year: new Date().getFullYear()
 }
 
-export default function (packageName = process.env.NPM_PACKAGE_NAME, packagePath = process.cwd(), options = {}) {
+export default function (packageName = process.env.NPM_PACKAGE_NAME, cwd = process.cwd(), options = {}) {
   // exit early
   if (!packageName) {
     throw new Error('missing package name')
@@ -48,28 +44,29 @@ export default function (packageName = process.env.NPM_PACKAGE_NAME, packagePath
   // use name if no description given
   opts.description = opts.description || packageName
 
-  debug('options: %j', opts)
-
-  return mkdirp(path.join(packagePath, 'test', 'fixtures'))
-    .then(() => {
+  // create target directory
+  return mkdirp(path.join(cwd, 'test', 'fixtures'))
+    // get all template files
+    .then(_ => {
       return glob('template/**/*', {
-        cwd: paths.cwd,
+        cwd: paths.root,
         dot: true,
         nodir: true,
         realpath: true
       })
     })
 
-    .then((_templates) => {
+    // assign to external object for later access
+    .then(_templates => {
       templates = _templates
-
       return templates
     })
 
+    // read the template contents
     .then(read)
 
     // process tempaltes
-    .then((buffers) => {
+    .then(buffers => {
       return buffers.reduce((files, buffer, index, buffers) => {
         // re-construct name
         let name = path.relative(paths.template, templates[index])
@@ -81,28 +78,23 @@ export default function (packageName = process.env.NPM_PACKAGE_NAME, packagePath
       }, {})
     })
 
-    .then((files) => {
-      let promises = []
+    .then(files => {
+      return Promise.all(
+        Object
+          .keys(files)
 
-      Object.keys(files).forEach((name) => {
-        let filename = path.join(packagePath, name)
-        let dir = path.dirname(filename)
+          .map(name => {
+            let filename = path.join(cwd, name)
+            let dir = path.dirname(filename)
 
-        debug('writing to %s', filename)
-
-        let promise = mkdirp(dir).then(() => write(filename, files[name]))
-
-        promises.push(promise)
-      })
-
-      return Promise.all(promises)
+            return mkdirp(dir).then(_ => write(filename, files[name]))
+          })
+      )
     })
 
     .then((files) => {
       if (opts.install) {
-        execFileSync('npm', ['update', '--silent', '--save'], {
-          cwd: packagePath
-        })
+        execFileSync('npm', ['update', '--save'], { cwd, stdio: ['inherit', 'inherit', 'inherit'] })
       }
 
       return files
@@ -110,23 +102,14 @@ export default function (packageName = process.env.NPM_PACKAGE_NAME, packagePath
 
     .then((files) => {
       if (opts.install) {
-        execFileSync('npm', ['update', '--silent', '--save-dev'], {
-          cwd: packagePath
-        })
+        execFileSync('npm', ['update', '--save-dev'], { cwd, stdio: ['inherit', 'inherit', 'inherit'] })
       }
 
       return files
     })
 
     .then((files) => {
-      if (opts.install && opts.semantic) {
-        // TODO: semantic-release-cli cannot be run with exec since its interactive.
-        // execFileSync(path.join(paths.cwd, 'node_modules', '.bin', 'semantic-release-cli'), ['setup'], {
-        //   cwd: packagePath
-        // })
-
-        console.log('do not forget to run "semantic-release-cli setup"')
-      }
+      console.log('do not forget to run "semantic-release-cli setup"')
 
       return files.sort()
     })

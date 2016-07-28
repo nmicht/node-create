@@ -1,11 +1,12 @@
 import ${name} from '../src/index'
-import tap from 'tap'
+import { test } from 'tap'
 
-tap.test('${name}', (t) => {
-  t.test('first test', (assert) => {
+test('${name}', tap => {
+  tap.plan(1)
+
+  tap.test('first test', assert => {
+    assert.plan(1)
+
     assert.ok(true)
-    assert.end()
   })
-
-  .then(t.end)
 })

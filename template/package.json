@@ -9,9 +9,6 @@
   },
   "license": "ISC",
   "main": "lib/index.js",
-  "bin": {
-    "${name}": "lib/bin.js"
-  },
   "keywords": [
     "${name}"
   ],
@@ -26,12 +23,11 @@
     "url": "https://github.com/${github}/${name}/issues"
   },
   "scripts": {
-    "compile": "babel -q src --out-dir lib",
-    "test": "tap test/*.js --node-arg=--require --node-arg=babel-register --node-arg=--require --node-arg=babel-polyfill | tap-mocha-reporter spec",
+    "compile": "babel -q src",
+    "test": "BABEL_ENV=test tap test/*.js --node-arg=--require --node-arg=babel-register | tap-mocha-reporter spec",
     "pretest": "standard && echint",
-    "coverage": "tap test/*.js --coverage --nyc-arg=--require --nyc-arg=babel-register --nyc-arg=--require --nyc-arg=babel-polyfill",
+    "coverage": "BABEL_ENV=test tap test/*.js --coverage --nyc-arg=--require --nyc-arg=babel-register",
     "codeclimate": "nyc report --reporter=text-lcov | codeclimate-test-reporter",
-    "prepublish": "npm run compile",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "babel": {
@@ -56,20 +52,19 @@
   },
   "devDependencies": {
     "babel-cli": "*",
-    "babel-polyfill": "*",
+    "babel-plugin-add-module-exports": "*",
+    "babel-plugin-transform-runtime": "*",
     "babel-preset-es2015": "*",
+    "babel-preset-es2015-node4": "*",
+    "babel-preset-es2015-node5": "*",
+    "babel-preset-es2015-node6": "*",
     "babel-register": "*",
     "codeclimate-test-reporter": "*",
     "cz-conventional-changelog": "*",
     "echint": "*",
-    "nyc": "*",
     "semantic-release": "*",
     "standard": "*",
     "tap": "*",
     "tap-mocha-reporter": "*"
-  },
-  "dependencies": {
-    "commander": "*",
-    "debug-log": "*"
   }
 }

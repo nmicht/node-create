@@ -13,91 +13,89 @@ const options = {
   email: 'foo@bar.com',
   github: 'foo',
   website: 'http://foo.com/',
-  semantic: false
+  install: false,
+  quiet: true
 }
 
-tap.test('npm-package-generator', (t) => {
-  t.afterEach((done) => rimraf(target, done))
+tap.afterEach(done => rimraf(target, done))
 
-  t.test('should populate template variables', (assert) => {
-    return generator('foobar', target, options)
-      .then(() => read('test/tmp/package.json'))
-      .then(JSON.parse)
-      .then((pkg) => {
-        assert.equal(pkg.name, 'foobar')
-        assert.equal(pkg.description, options.description)
-        assert.equal(pkg.author, `${options.author} <${options.email}> (${options.website})`)
-        assert.equal(pkg.homepage, `https://github.com/${options.github}/foobar`)
-      })
-      .catch(assert.threw)
-  })
+tap.test('should populate template variables', assert => {
+  assert.plan(4)
 
-  t.test('should use process.cwd', (assert) => {
-    let cwd = process.cwd()
+  return generator('foobar', target, options)
+    .then(_ => read(path.join(target, 'package.json')))
+    .then(JSON.parse)
+    .then(pkg => {
+      assert.equal(pkg.name, 'foobar')
+      assert.equal(pkg.description, options.description)
+      assert.equal(pkg.author, `${options.author} <${options.email}> (${options.website})`)
+      assert.equal(pkg.homepage, `https://github.com/${options.github}/foobar`)
+    })
+})
 
-    return mkdirp('/tmp/foo')
-      .then(() => process.chdir('/tmp/foo'))
-      .then(() => generator('foo'))
-      .then((files) => {
-        var file = path.dirname(files.pop())
+tap.test('should use process.cwd', assert => {
+  assert.plan(1)
 
-        assert.equal('/tmp/foo/test', file)
-      })
+  let cwd = process.cwd()
 
-      .then(() => process.chdir(cwd)) // return to cwd
-      .catch(assert.threw)
-  })
+  return mkdirp('/tmp/foo')
+    .then(_ => process.chdir('/tmp/foo'))
+    .then(_ => generator('foo'))
+    .then(files => {
+      var file = path.dirname(files.pop())
 
-  t.test('should return a list of files created', (assert) => {
-    return generator('foo', target, options)
-      .then((files) => {
-        assert.same(files, [
-          'test/tmp/.codeclimate.yml',
-          'test/tmp/.editorconfig',
-          'test/tmp/.gitignore',
-          'test/tmp/.travis.yml',
-          'test/tmp/LICENSE',
-          'test/tmp/README.md',
-          'test/tmp/package.json',
-          'test/tmp/src/bin.js',
-          'test/tmp/src/index.js',
-          'test/tmp/test/index.js'
-        ])
-      })
-      .catch(assert.threw)
-  })
+      assert.equal('/tmp/foo/test', file)
+    })
 
-  t.test('should use environment variables', (assert) => {
-    process.env.NPM_AUTHOR_EMAIL = 'foo@bar.com'
-    process.env.NPM_AUTHOR_NAME = 'foo'
-    process.env.NPM_AUTHOR_WEBSITE = 'http://foo.com/'
-    process.env.NPM_GITHUB_USERNAME = 'foo'
-    process.env.NPM_PACKAGE_NAME = 'foobar'
+    .then(_ => process.chdir(cwd)) // return to cwd
+})
 
-    return generator('foobar', target)
-      .then(() => read('test/tmp/package.json'))
-      .then(JSON.parse)
-      .then((pkg) => {
-        assert.equal(pkg.name, process.env.NPM_PACKAGE_NAME)
-        assert.equal(pkg.author, `${process.env.NPM_AUTHOR_NAME} <${process.env.NPM_AUTHOR_EMAIL}> (${process.env.NPM_AUTHOR_WEBSITE})`)
-        assert.equal(pkg.repository.url, `https://github.com/${process.env.NPM_GITHUB_USERNAME}/${process.env.NPM_PACKAGE_NAME}.git`)
-      })
-      .catch(assert.threw)
-  })
+tap.test('should return a list of files created', assert => {
+  assert.plan(1)
 
-  t.test('should install dependencies', (assert) => {
-    let opts = {
-      install: true,
-      quiet: true
-    }
+  return generator('foo', target, options)
+    .then(files => {
+      assert.same(files, [
+        'test/tmp/.babelrc',
+        'test/tmp/.codeclimate.yml',
+        'test/tmp/.editorconfig',
+        'test/tmp/.gitignore',
+        'test/tmp/.travis.yml',
+        'test/tmp/LICENSE',
+        'test/tmp/README.md',
+        'test/tmp/package.json',
+        'test/tmp/src/index.js',
+        'test/tmp/test/index.js'
+      ])
+    })
+})
 
-    let target = '/tmp/npm-package-genrator/test'
+tap.test('should use environment variables', assert => {
+  assert.plan(3)
 
-    return mkdirp(target)
-      .then((dir) => generator('foo', target, opts))
-      .then((files) => assert.ok(fs.existsSync(path.join(target, 'node_modules'))))
-      .catch(assert.threw)
-  })
+  process.env.NPM_AUTHOR_EMAIL = 'foo@bar.com'
+  process.env.NPM_AUTHOR_NAME = 'foo'
+  process.env.NPM_AUTHOR_WEBSITE = 'http://foo.com/'
+  process.env.NPM_GITHUB_USERNAME = 'foo'
+  process.env.NPM_PACKAGE_NAME = 'foobar'
 
-  .then(t.end)
+  return generator('foobar', target)
+    .then(_ => read('test/tmp/package.json'))
+    .then(JSON.parse)
+    .then(pkg => {
+      assert.equal(pkg.name, process.env.NPM_PACKAGE_NAME)
+      assert.equal(pkg.author, `${process.env.NPM_AUTHOR_NAME} <${process.env.NPM_AUTHOR_EMAIL}> (${process.env.NPM_AUTHOR_WEBSITE})`)
+      assert.equal(pkg.repository.url, `https://github.com/${process.env.NPM_GITHUB_USERNAME}/${process.env.NPM_PACKAGE_NAME}.git`)
+    })
+})
+
+tap.test('should install dependencies', assert => {
+  assert.plan(1)
+
+  let opts = Object.assign(options, { install: true })
+  let target = '/tmp/npm-package-genrator/test'
+
+  return mkdirp(target)
+    .then(dir => generator('foo', target, opts))
+    .then(files => assert.ok(fs.existsSync(path.join(target, 'node_modules'))))
 })

@@ -11,20 +11,40 @@
 ## Install
 
 ```bash
-npm install --save ${name}
+npm install --production --save ${name}
 ```
 
 ## Usage
 
-```
+I reccomend using an optimized build matching your Node.js environment version, otherwise, the standard `require` would work just fine.
 
-  Usage: ${name} [options] <files ...>
+```js
+/*
+ * Node 6
+ * Built using `babel-preset-es2015-node6`
+ */
+const ${name} = require('${name}/lib/node6')
 
-  Options:
+/*
+ * Node 5
+ * Built using `babel-preset-es2015-node5`
+ */
+const ${name} = require('${name}/lib/node5')
 
-    -h, --help     output usage information
-    -V, --version  output the version number
+/*
+ * Node 4
+ * Built using `babel-preset-es2015-node4`
+ */
+const ${name} = require('${name}/lib/node4')
 
+/*
+ * Node >=0.10 <=0.12
+ * Built using `babel-preset-es2015`
+ * Note: 
+ *   - additional package is required: `babel-runtime`
+ *   - npm install --save babel-runtime
+ */
+var ${name} = require('${name}')
 ```
 
 ## API

@@ -18,8 +18,7 @@ cmd
   .option('-e, --email <email>', 'Author Email')
   .option('-g, --github <username>', 'Github Username')
   .option('-w, --website <url>', 'Author Website')
-  .option('-i, --no-install', 'don\'t install dependencies')
-  .option('-s, --no-semantic', 'don\'t run semantic-release-cli setup')
+  .option('-i, --no-install', "don't install dependencies")
   .parse(process.argv)
 
 if (!packageName || !packagePath) {
@@ -27,7 +26,7 @@ if (!packageName || !packagePath) {
 }
 
 generator(packageName, packagePath, cmd)
-  .then((files) => console.info('done.'))
-  .then(() => process.exit(0))
-  .catch((err) => console.error(err))
-  .then(() => process.exit(1))
+  .then(files => console.info('done.'))
+  .then(_ => process.exit(0))
+  .catch(err => console.error(err))
+  .then(_ => process.exit(1))

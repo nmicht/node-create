@@ -9,7 +9,6 @@
   },
   "license": "ISC",
   "main": "lib/generator.js",
-  "preferglobal": true,
   "bin": {
     "npm-package-generator": "lib/bin.js"
   },
@@ -19,7 +18,7 @@
     "generator"
   ],
   "engines": {
-    "node": ">=5"
+    "node": ">=4"
   },
   "files": [
     "lib",
@@ -30,30 +29,22 @@
     "url": "https://github.com/ahmadnassri/npm-package-generator/issues"
   },
   "scripts": {
-    "compile": "babel -q src --out-dir lib",
-    "test": "tap test/*.js --timeout=180 --node-arg=--require --node-arg=babel-register --node-arg=--require --node-arg=babel-polyfill | tap-mocha-reporter spec",
+    "compile": "babel -q src",
+    "test": "BABEL_ENV=test tap test/*.js --node-arg=--require --node-arg=babel-register | tap-mocha-reporter spec",
     "pretest": "standard && echint",
-    "coverage": "tap test/*.js --timeout=180 --coverage --nyc-arg=--require --nyc-arg=babel-register --nyc-arg=--require --nyc-arg=babel-polyfill",
+    "coverage": "BABEL_ENV=test tap test/*.js --coverage --nyc-arg=--require --nyc-arg=babel-register",
     "codeclimate": "nyc report --reporter=text-lcov | codeclimate-test-reporter",
-    "prepublish": "npm run compile",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
-  },
-  "babel": {
-    "presets": [
-      "es2015-node5"
-    ]
   },
   "standard": {
     "ignore": [
       "lib/**",
-      "template/**",
-      "test/tmp/**"
+      "template/**"
     ]
   },
   "echint": {
     "ignore": [
-      "lib/**",
-      "test/tmp/**"
+      "lib/**"
     ]
   },
   "config": {
@@ -62,31 +53,32 @@
     }
   },
   "devDependencies": {
-    "babel-cli": "^6.6.5",
-    "babel-polyfill": "^6.7.4",
-    "babel-preset-es2015-node5": "^1.2.0",
-    "babel-register": "^6.7.2",
-    "codeclimate-test-reporter": "0.3.2",
-    "cz-conventional-changelog": "^1.1.5",
+    "babel-cli": "*",
+    "babel-plugin-add-module-exports": "*",
+    "babel-plugin-transform-runtime": "*",
+    "babel-preset-es2015": "*",
+    "babel-preset-es2015-node4": "*",
+    "babel-preset-es2015-node5": "*",
+    "babel-preset-es2015-node6": "*",
+    "codeclimate-test-reporter": "0.3.3",
+    "cz-conventional-changelog": "^1.1.6",
     "echint": "^1.5.3",
-    "fs-readfile-promise": "^2.0.1",
+    "fs-readfile-promise": "^3.0.0",
     "mkdirp": "^0.5.1",
-    "nyc": "^6.4.0",
-    "rimraf": "^2.5.2",
+    "rimraf": "^2.5.3",
     "semantic-release": "^4.3.5",
     "standard": "^7.1.2",
     "tap": "^5.7.0",
-    "tap-mocha-reporter": "0.0.24"
+    "tap": "^6.2.0",
+    "tap-mocha-reporter": "0.0.26"
   },
   "dependencies": {
     "commander": "^2.9.0",
-    "debug-log": "^1.0.0",
     "dotenv": "^2.0.0",
     "fs-writefile-promise": "^1.0.3",
     "glob-promise": "^1.0.6",
-    "lodash.template": "^4.2.2",
-    "mkdirp-promise": "^1.0.4",
-    "read-files-promise": "^1.1.1",
-    "semantic-release-cli": "^1.4.1"
+    "lodash.template": "^4.2.5",
+    "mkdirp-promise": "^2.0.0",
+    "read-files-promise": "^1.1.1"
   }
 }

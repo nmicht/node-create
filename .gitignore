@@ -1,5 +1,4 @@
 *.log
 /lib
-/test/tmp
 /node_modules
 /.nyc_output
