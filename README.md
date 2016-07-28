@@ -77,7 +77,7 @@ npm install --production --save npm-package-generator
 
 ```
 
-  Usage: bin [options] <name> <path>
+  Usage: npm-package-generator [options] <name> <path>
 
   Options:
 
@@ -88,7 +88,7 @@ npm install --production --save npm-package-generator
     -e, --email <email>              Author Email
     -g, --github <username>          Github Username
     -w, --website <url>              Author Website
-    -i, --install                    Install Dependencies
+    -i, --no-install                 don't install dependencies
 
 ```
 
