@@ -42,7 +42,7 @@ const ${name} = require('${name}/lib/node4')
  * Built using `babel-preset-es2015`
  * Note: 
  *   - additional package is required: `babel-runtime`
- *   - npm install --save babel-runtime
+ *   - npm install --production --save babel-runtime
  */
 var ${name} = require('${name}')
 ```
