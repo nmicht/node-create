@@ -59,7 +59,7 @@ ${name}()
 
 ----
 > :copyright: [${domain}](${website}) &nbsp;&middot;&nbsp;
-> License: [ISC](LICENSE) &nbsp;&middot;&nbsp;
+> License: [ISC][license-url] &nbsp;&middot;&nbsp;
 > Github: [@${github}](https://github.com/${github}) &nbsp;&middot;&nbsp;
 > Twitter: [@${github}](https://twitter.com/${github})
 
