@@ -82,4 +82,4 @@ ${name}()
 [david-image]: https://img.shields.io/david/${github}/${name}.svg?style=flat-square
 
 [dependencyci-url]: https://dependencyci.com/github/${github}/${name}
-[dependencyci-image]: https://dependencyci.com/github/${github}/${name}/badge?tyle=flat-square
+[dependencyci-image]: https://dependencyci.com/github/${github}/${name}/badge?style=flat-square
