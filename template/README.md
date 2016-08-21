@@ -6,6 +6,7 @@
 [![Downloads][npm-downloads]][npm-url]
 [![Code Climate][codeclimate-quality]][codeclimate-url]
 [![Coverage Status][codeclimate-coverage]][codeclimate-url]
+[![Dependency Status][dependencyci-image]][dependencyci-url]
 [![Dependencies][david-image]][david-url]
 
 ## Install
@@ -79,3 +80,6 @@ ${name}()
 
 [david-url]: https://david-dm.org/${github}/${name}
 [david-image]: https://img.shields.io/david/${github}/${name}.svg?style=flat-square
+
+[dependencyci-url]: https://dependencyci.com/github/${github}/${name}
+[dependencyci-image]: https://dependencyci.com/github/${github}/${name}/badge?tyle=flat-square

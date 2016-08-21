@@ -6,6 +6,7 @@
 [![Downloads][npm-downloads]][npm-url]
 [![Code Climate][codeclimate-quality]][codeclimate-url]
 [![Coverage Status][codeclimate-coverage]][codeclimate-url]
+[![Dependency Status][dependencyci-image]][dependencyci-url]
 [![Dependencies][david-image]][david-url]
 
 ## The Opinionated Parts
@@ -136,3 +137,6 @@ generator('my-awesome-package', '~/Projects/my-awesome-package', options)
 
 [david-url]: https://david-dm.org/ahmadnassri/npm-package-generator
 [david-image]: https://img.shields.io/david/ahmadnassri/npm-package-generator.svg?style=flat-square
+
+[dependencyci-url]: https://dependencyci.com/github/ahmadnassri/npm-package-generator
+[dependencyci-image]: https://dependencyci.com/github/ahmadnassri/npm-package-generator/badge?tyle=flat-square
