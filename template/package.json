@@ -25,7 +25,7 @@
   "scripts": {
     "compile": "babel -q src",
     "test": "BABEL_ENV=test tap test/*.js --node-arg=--require --node-arg=babel-register | tap-mocha-reporter spec",
-    "pretest": "standard && echint",
+    "pretest": "snazzy && echint",
     "coverage": "BABEL_ENV=test tap test/*.js --coverage --nyc-arg=--require --nyc-arg=babel-register",
     "codeclimate": "nyc report --reporter=text-lcov | codeclimate-test-reporter",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
@@ -58,7 +58,7 @@
     "cz-conventional-changelog": "*",
     "echint": "*",
     "semantic-release": "*",
-    "standard": "*",
+    "snazzy": "*",
     "tap": "*",
     "tap-mocha-reporter": "*"
   }

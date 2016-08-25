@@ -31,7 +31,7 @@
   "scripts": {
     "compile": "babel -q src",
     "test": "BABEL_ENV=test tap test/*.js --node-arg=--require --node-arg=babel-register | tap-mocha-reporter spec",
-    "pretest": "standard && echint",
+    "pretest": "snazzy && echint",
     "coverage": "BABEL_ENV=test tap test/*.js --coverage --nyc-arg=--require --nyc-arg=babel-register",
     "codeclimate": "nyc report --reporter=text-lcov | codeclimate-test-reporter",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
@@ -67,7 +67,7 @@
     "mkdirp": "^0.5.1",
     "rimraf": "^2.5.4",
     "semantic-release": "^4.3.5",
-    "standard": "^8.0.0-beta.5",
+    "snazzy": "^4.0.1",
     "tap": "^6.3.2",
     "tap-mocha-reporter": "2.0.1"
   },
