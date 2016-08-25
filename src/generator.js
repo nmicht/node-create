@@ -39,7 +39,7 @@ export default function (packageName = process.env.NPM_PACKAGE_NAME, cwd = proce
   opts.name = packageName
 
   // parse domain
-  opts.domain = url.parse(opts.website).hostname
+  opts.domain = opts.website ? url.parse(opts.website).hostname : ''
 
   // use name if no description given
   opts.description = opts.description || packageName
