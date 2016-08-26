@@ -117,11 +117,11 @@ generator('my-awesome-package', '~/Projects/my-awesome-package', options)
 
 ----
 > :copyright: [ahmadnassri.com](https://www.ahmadnassri.com/) &nbsp;&middot;&nbsp;
-> License: [ISC](LICENSE) &nbsp;&middot;&nbsp;
+> License: [ISC][license-url] &nbsp;&middot;&nbsp;
 > Github: [@ahmadnassri](https://github.com/ahmadnassri) &nbsp;&middot;&nbsp;
 > Twitter: [@ahmadnassri](https://twitter.com/ahmadnassri)
 
-[license-url]: https://github.com/ahmadnassri/npm-package-generator/blob/master/LICENSE
+[license-url]: http://choosealicense.com/licenses/isc/
 
 [travis-url]: https://travis-ci.org/ahmadnassri/npm-package-generator
 [travis-image]: https://img.shields.io/travis/ahmadnassri/npm-package-generator.svg?style=flat-square
