@@ -39,7 +39,7 @@ const ${name} = require('${name}/lib/node5')
 const ${name} = require('${name}/lib/node4')
 
 /*
- * Node >=0.10 <=0.12
+ * Node >=0.10 <=0.12 & ES5
  * Built using `babel-preset-es2015`
  * Note: 
  *   - additional package is required: `babel-runtime`
