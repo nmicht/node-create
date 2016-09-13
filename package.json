@@ -67,7 +67,7 @@
     "mkdirp": "^0.5.1",
     "rimraf": "^2.5.4",
     "semantic-release": "^4.3.5",
-    "snazzy": "^4.0.1",
+    "snazzy": "^5.0.0",
     "tap": "^7.0.0",
     "tap-mocha-reporter": "2.0.1"
   },
