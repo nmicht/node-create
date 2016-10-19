@@ -17,7 +17,7 @@ npm install --production --save ${name}
 
 ## Usage
 
-I reccomend using an optimized build matching your Node.js environment version, otherwise, the standard `require` would work just fine.
+I recommend using an optimized build matching your Node.js environment version, otherwise, the standard `require` would work just fine.
 
 ```js
 /*
