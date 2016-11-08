@@ -10,22 +10,22 @@
       "plugins": ["babel-plugin-add-module-exports", "transform-runtime"]
     },
 
-    "node4": {
+    "v4": {
       "presets": [ ["env", { "targets": { "node": 4.0 } }] ],
       "plugins": ["babel-plugin-add-module-exports"]
     },
 
-    "node5": {
+    "v5": {
       "presets": [ ["env", { "targets": { "node": 5.0 } }] ],
       "plugins": ["babel-plugin-add-module-exports"]
     },
 
-    "node6": {
+    "v6": {
       "presets": [ ["env", { "targets": { "node": 6.0 } }] ],
       "plugins": ["babel-plugin-add-module-exports"]
     },
 
-    "node7": {
+    "v7": {
       "presets": [ ["env", { "targets": { "node": 7.0 } }] ],
       "plugins": ["babel-plugin-add-module-exports"]
     }
