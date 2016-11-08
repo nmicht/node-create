@@ -11,7 +11,7 @@ os:
   - osx
 
 env:
-  - BABEL_ENV=$TRAVIS_NODE_VERSION
+  - BABEL_ENV=test
 
 cache:
   directories:
