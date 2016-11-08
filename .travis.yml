@@ -2,35 +2,35 @@ language: node_js
 
 matrix:
   include:
-    - node: 4
+    - node: "4.x"
       env: BABEL_ENV=node4
       os: linux
 
-    - node: 4
+    - node: "4.x"
       env: BABEL_ENV=node4
       os: osx
 
-    - node: 5
+    - node: "5.x"
       env: BABEL_ENV=node5
       os: linux
 
-    - node: 5
+    - node: "5.x"
       env: BABEL_ENV=node5
       os: osx
 
-    - node: 6
+    - node: "6.x"
       env: BABEL_ENV=node6
       os: linux
 
-    - node: 6
+    - node: "6.x"
       env: BABEL_ENV=node6
       os: osx
 
-    - node: 7
+    - node: "7.x"
       env: BABEL_ENV=node7
       os: linux
 
-    - node: 7
+    - node: "7.x"
       env: BABEL_ENV=node7
       os: osx
 
