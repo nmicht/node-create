@@ -2,7 +2,7 @@
   "env": {
     "test": {
       "presets": [ ["env", { "targets": { "node": "current" } }] ],
-      "plugins": []
+      "plugins": ["transform-runtime"]
     },
 
     "browsers": {
@@ -12,7 +12,7 @@
 
     "v4": {
       "presets": [ ["env", { "targets": { "node": 4.0 } }] ],
-      "plugins": ["babel-plugin-add-module-exports"]
+      "plugins": ["babel-plugin-add-module-exports", "transform-runtime"]
     },
 
     "v5": {

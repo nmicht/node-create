@@ -13,6 +13,9 @@ os:
 env:
   - BABEL_ENV=test
 
+matrix:
+  fast_finish: true
+
 cache:
   directories:
     - node_modules
