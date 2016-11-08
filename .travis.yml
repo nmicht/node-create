@@ -1,38 +1,17 @@
 language: node_js
 
-matrix:
-  include:
-    - node: "4.x"
-      env: BABEL_ENV=node4
-      os: linux
+node_js:
+ - 4
+ - 5
+ - 6
+ - 7
 
-    - node: "4.x"
-      env: BABEL_ENV=node4
-      os: osx
+os:
+  - linux
+  - osx
 
-    - node: "5.x"
-      env: BABEL_ENV=node5
-      os: linux
-
-    - node: "5.x"
-      env: BABEL_ENV=node5
-      os: osx
-
-    - node: "6.x"
-      env: BABEL_ENV=node6
-      os: linux
-
-    - node: "6.x"
-      env: BABEL_ENV=node6
-      os: osx
-
-    - node: "7.x"
-      env: BABEL_ENV=node7
-      os: linux
-
-    - node: "7.x"
-      env: BABEL_ENV=node7
-      os: osx
+env:
+  - BABEL_ENV=$TRAVIS_NODE_VERSION
 
 cache:
   directories:
@@ -45,10 +24,10 @@ after_success:
   - export $(cat .to_export_back) > /dev/null
   - npm run coverage
   - npm run codeclimate
-  - BABEL_ENV=node4 npm run compile -- -d lib
-  - BABEL_ENV=node5 npm run compile -- -d lib/node5
-  - BABEL_ENV=node6 npm run compile -- -d lib/node6
-  - BABEL_ENV=node7 npm run compile -- -d lib/node7
+  - BABEL_ENV=v4 npm run compile -- -d lib
+  - BABEL_ENV=v5 npm run compile -- -d lib/node5
+  - BABEL_ENV=v6 npm run compile -- -d lib/node6
+  - BABEL_ENV=v7 npm run compile -- -d lib/node7
   - npm run semantic-release
 
 branches:
