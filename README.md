@@ -13,7 +13,7 @@
 
 I follow the below set of rules in all projects, `npm-package-generator` ensures all those rules are followed:
 
-- write in ES2015, compile into ES5
+- write in ES2015, compile into ES5, Node (v4, v5, v6, v7) compatible packages
 - use the most permissive open source license *(currently ISC)*
 - follow a preferred folder tree & npm's default expected file naming *(see [below](#folder-tree))*
 - always expose your package's compiled library modules *(see [below](#folder-tree))*
@@ -32,13 +32,15 @@ I follow the below set of rules in all projects, `npm-package-generator` ensures
 
 ```
 /package-name/
-├── lib (compiled to ES5)
+├── lib (compiled to Node v4)
 │   ├── index.js
-│   ├── node4 (compiled to Node v4)
+│   ├── browsers (compiled to last 2 versions of top browsers)
 │   │   └── index.js
 │   ├── node5 (compiled to Node v5)
 │   │   └── index.js
-│   └── node6 (compiled to Node v5)
+│   ├── node6 (compiled to Node v6)
+│   │   └── index.js
+│   └── node7 (compiled to Node v7)
 │       └── index.js
 ├── LICENSE
 ├── package.json
