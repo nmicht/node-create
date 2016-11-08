@@ -13,7 +13,7 @@
     "${name}"
   ],
   "engines": {
-    "node": ">=0.10"
+    "node": ">=4"
   },
   "files": [
     "lib",
@@ -48,7 +48,6 @@
   "devDependencies": {
     "babel-cli": "*",
     "babel-plugin-add-module-exports": "*",
-    "babel-plugin-transform-runtime": "*",
     "babel-preset-env": "*",
     "babel-register": "*",
     "codeclimate-test-reporter": "*",

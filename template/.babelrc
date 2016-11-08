@@ -2,17 +2,17 @@
   "env": {
     "test": {
       "presets": [ ["env", { "targets": { "node": "current" } }] ],
-      "plugins": ["transform-runtime"]
+      "plugins": []
     },
 
     "browsers": {
       "presets": [ ["env", { "targets": { "browsers": ["last 2 versions"] } }] ],
-      "plugins": ["babel-plugin-add-module-exports", "transform-runtime"]
+      "plugins": ["babel-plugin-add-module-exports"]
     },
 
     "v4": {
       "presets": [ ["env", { "targets": { "node": 4.0 } }] ],
-      "plugins": ["babel-plugin-add-module-exports", "transform-runtime"]
+      "plugins": ["babel-plugin-add-module-exports"]
     },
 
     "v5": {

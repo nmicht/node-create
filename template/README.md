@@ -17,33 +17,27 @@ npm install --production --save ${name}
 
 ## Usage
 
-I recommend using an optimized build matching your Node.js environment version, otherwise, the standard `require` would work just fine.
+I recommend using an optimized build matching your Node.js environment version, otherwise, the standard `require` would work just fine with any version of Node `>= v4.0` .
 
 ```js
 /*
+ * Node 7
+ */
+const ${name} = require('${name}/lib/node7')
+
+/*
  * Node 6
- * Built using `babel-preset-es2015-node6`
  */
 const ${name} = require('${name}/lib/node6')
 
 /*
  * Node 5
- * Built using `babel-preset-es2015-node5`
  */
-const ${name} = require('${name}/lib/node5')
+var ${name} = require('${name}/lib/node5')
 
 /*
- * Node 4
- * Built using `babel-preset-es2015-node4`
- */
-const ${name} = require('${name}/lib/node4')
-
-/*
- * Node >=0.10 <=0.12 & ES5
- * Built using `babel-preset-es2015`
- * Note: 
- *   - additional package is required: `babel-runtime`
- *   - npm install --production --save babel-runtime
+ * Node 4 (Default)
+ * Note: additional ES2015 polyfills may be required
  */
 var ${name} = require('${name}')
 ```
