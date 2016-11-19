@@ -12,7 +12,7 @@
 ## Install
 
 ```bash
-npm install --production --save ${name}
+npm install --only=production --save ${name}
 ```
 
 ## Usage

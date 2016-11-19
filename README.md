@@ -73,7 +73,7 @@ please reach out to share any feedback & contribution!
 ## Install
 
 ```sh
-npm install --production --save npm-package-generator
+npm install --only=production --save npm-package-generator
 ```
 
 ## Usage
