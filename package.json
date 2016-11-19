@@ -1,4 +1,5 @@
 {
+  "version": "0.0.0-development",
   "name": "npm-package-generator",
   "description": "an opinionated npm package template",
   "author": "Ahmad Nassri <ahmad@ahmadnassri.com> (https://www.ahmadnassri.com/)",
@@ -55,7 +56,7 @@
   "devDependencies": {
     "babel-cli": "^6.18.0",
     "babel-plugin-add-module-exports": "^0.2.1",
-    "babel-preset-env": "0.0.7",
+    "babel-preset-env": "0.0.8",
     "babel-register": "^6.18.0",
     "codeclimate-test-reporter": "^0.4.0",
     "cz-conventional-changelog": "^1.2.0",
@@ -63,9 +64,9 @@
     "fs-readfile-promise": "^3.0.0",
     "mkdirp": "^0.5.1",
     "rimraf": "^2.5.4",
-    "semantic-release": "^4.3.5",
+    "semantic-release": "^6.3.2",
     "snazzy": "^5.0.0",
-    "tap": "^8.0.0",
+    "tap": "^8.0.1",
     "tap-mocha-reporter": "3.0.0"
   },
   "dependencies": {
