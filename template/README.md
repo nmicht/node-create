@@ -31,11 +31,6 @@ const ${name} = require('${name}/lib/node7')
 const ${name} = require('${name}/lib/node6')
 
 /*
- * Node 5
- */
-var ${name} = require('${name}/lib/node5')
-
-/*
  * Node 4 (Default)
  * Note: additional ES2015 polyfills may be required
  */

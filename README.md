@@ -36,7 +36,7 @@ I follow the below set of rules in all projects, `npm-package-generator` ensures
 │   ├── index.js
 │   ├── browsers (compiled to last 2 versions of top browsers)
 │   │   └── index.js
-│   ├── node5 (compiled to Node v5)
+│   ├── node4 (compiled to Node v4)
 │   │   └── index.js
 │   ├── node6 (compiled to Node v6)
 │   │   └── index.js
