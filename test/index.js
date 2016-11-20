@@ -89,7 +89,7 @@ tap.test('should use environment variables', assert => {
     })
 })
 
-tap.test('should install dependencies', assert => {
+tap.test('should install dependencies', { timeout: 6000 }, assert => {
   assert.plan(1)
 
   let opts = Object.assign(options, { install: true })

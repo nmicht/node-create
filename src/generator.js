@@ -33,16 +33,18 @@ export default function (packageName = process.env.NPM_PACKAGE_NAME, cwd = proce
   }
 
   let templates = []
-  let opts = Object.assign(defaults, options)
+
+  // default options
+  options = Object.assign(defaults, options)
 
   // assign name
-  opts.name = packageName
+  options.name = packageName
 
   // parse domain
-  opts.domain = opts.website ? url.parse(opts.website).hostname : ''
+  options.domain = options.website ? url.parse(options.website).hostname : ''
 
   // use name if no description given
-  opts.description = opts.description || packageName
+  options.description = options.description || packageName
 
   // create target directory
   return mkdirp(path.join(cwd, 'test', 'fixtures'))
@@ -72,7 +74,7 @@ export default function (packageName = process.env.NPM_PACKAGE_NAME, cwd = proce
         let name = path.relative(paths.template, templates[index])
 
         // construct new mapping object
-        files[name] = template(buffer)(opts)
+        files[name] = template(buffer)(options)
 
         return files
       }, {})
@@ -93,7 +95,7 @@ export default function (packageName = process.env.NPM_PACKAGE_NAME, cwd = proce
     })
 
     .then((files) => {
-      if (opts.install) {
+      if (options.install) {
         execFileSync('npm', ['update', '--save'], { cwd, stdio: ['inherit', 'inherit', 'inherit'] })
       }
 
@@ -101,7 +103,7 @@ export default function (packageName = process.env.NPM_PACKAGE_NAME, cwd = proce
     })
 
     .then((files) => {
-      if (opts.install) {
+      if (options.install) {
         execFileSync('npm', ['update', '--save-dev'], { cwd, stdio: ['inherit', 'inherit', 'inherit'] })
       }
 
