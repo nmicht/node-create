@@ -31,22 +31,20 @@
   },
   "scripts": {
     "compile": "babel -q src",
-    "test": "BABEL_ENV=test tap test/*.js --reporter spec --node-arg=--require --node-arg=babel-register",
+    "test": "BABEL_ENV=test tap test --reporter spec --node-arg=--require --node-arg=babel-register",
     "pretest": "snazzy && echint",
-    "coverage": "BABEL_ENV=test tap test/*.js --reporter silent --coverage --nyc-arg=--require --nyc-arg=babel-register",
+    "coverage": "BABEL_ENV=test tap test --reporter silent --coverage --nyc-arg=--require --nyc-arg=babel-register",
     "codeclimate": "BABEL_ENV=test tap --coverage-report=text-lcov | codeclimate-test-reporter",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "standard": {
     "ignore": [
       "lib/**",
-      "test/tmp/**",
       "template/**"
     ]
   },
   "echint": {
     "ignore": [
-      "test/tmp/**",
       "lib/**"
     ]
   },
