@@ -15,28 +15,6 @@
 npm install --only=production --save ${name}
 ```
 
-## Usage
-
-I recommend using an optimized build matching your Node.js environment version, otherwise, the standard `require` would work just fine with any version of Node `>= v4.0` .
-
-```js
-/*
- * Node 7
- */
-const ${name} = require('${name}/lib/node7')
-
-/*
- * Node 6
- */
-const ${name} = require('${name}/lib/node6')
-
-/*
- * Node 4 (Default)
- * Note: additional ES2015 polyfills may be required
- */
-var ${name} = require('${name}')
-```
-
 ## API
 
 ### ${name}()
@@ -45,6 +23,21 @@ var ${name} = require('${name}')
 import ${name} from '${name}'
 
 ${name}()
+```
+
+## Targetted Builds
+
+an optimized build is made available for every major Node.js version marked as [Active LTS](https://github.com/nodejs/LTS).
+
+```js
+// Node 7
+const logress = require('logress/lib/node7')
+
+// Node 6
+const logress = require('logress/lib/node6')
+
+// Node 4 (Default)
+var logress = require('logress')
 ```
 
 ----
