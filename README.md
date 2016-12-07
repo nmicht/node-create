@@ -72,7 +72,7 @@ please reach out to share any feedback & contribution!
 
 ## Install
 
-```sh
+```bash
 npm install --only=production --save npm-package-generator
 ```
 
