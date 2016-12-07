@@ -27,7 +27,7 @@ before_deploy:
   - BABEL_ENV=v4 npm run compile -- -d lib/node4
   - BABEL_ENV=v6 npm run compile -- -d lib/node6
   - BABEL_ENV=v7 npm run compile -- -d lib/node7
-  - BABEL_ENV=browser npm run compile -- -d lib/browser
+  - BABEL_ENV=browsers npm run compile -- -d lib/browsers
 
 deploy:
   skip_cleanup: true
