@@ -1,6 +1,6 @@
 {
   "env": {
-    "test": {
+    "development": {
       "presets": [ ["env", { "targets": { "node": "current" } }] ],
       "plugins": []
     },
