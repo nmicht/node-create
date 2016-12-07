@@ -36,7 +36,7 @@ I follow the below set of rules in all projects, `npm-package-generator` ensures
 │   ├── index.js
 │   ├── browsers (compiled to last 2 versions of top browsers)
 │   │   └── index.js
-│   ├── node4 (compiled to Node v4)
+│   ├── node4 (compiled to Node v4) (default export)
 │   │   └── index.js
 │   ├── node6 (compiled to Node v6)
 │   │   └── index.js
@@ -55,13 +55,6 @@ I follow the below set of rules in all projects, `npm-package-generator` ensures
 - `/lib`: compiled library files, this is the default exposed output.
 - `/src`: source library files: all common business logic, use this folder for your code
 
-### First Run
-
-- remove any optional files and folders based on the type of project (e.g. `src/bin`)
-- use `npm scripts` when possible to automate install and build steps:
-  - e.g. `"postinstall": "bower install"`
-  - e.g. `"beforestart": "gulp build"`
-
 ## Work in progress...
 
 This is a work in progress, and will likely be in this state forever!
@@ -78,31 +71,44 @@ npm install --only=production --save npm-package-generator
 
 ## Usage
 
+```bash
+$ npm-package-generator new my-awesome-package ~/Projects/my-awesome-package
 ```
 
-  Usage: npm-package-generator [options] <name> <path>
+```
+npm-package-generator new <name> [path] [options]
 
-  Options:
-
-    -h, --help                       output usage information
-    -V, --version                    output the version number
-    -a, --author <name>              Author Name
-    -d, --description <description>  description
-    -e, --email <email>              Author Email
-    -g, --github <username>          Github Username
-    -w, --website <url>              Author Website
-    -i, --no-install                 don't install dependencies
+Options:
+  --help             Show help                                         [boolean]
+  --author, -a       Author Name            [required] [default: "Ahmad Nassri"]
+  --description, -d  Package Description
+  --email, -e        Author Email  [required] [default: "ahmad@ahmadnassri.com"]
+  --github, -g       Github Username         [required] [default: "ahmadnassri"]
+  --website, -w      Author Website
+                            [required] [default: "https://www.ahmadnassri.com/"]
+  --install, -i      Install Dependencies?           [required] [default: false]
 
 ```
 
 ## API
 
-### generator(name, path, [options])
+### generator(options)
 
 ```js
 import generator from 'npm-package-generator'
 
-generator('my-awesome-package', '~/Projects/my-awesome-package', options)
+options = {
+  path: '~/Projects/my-awesome-package',
+  name: 'my-awesome-package',
+  description: 'my-awesome-package',
+  author: 'Ahmad Nassri',
+  email: 'ahmad@nassri.email',
+  website: 'https://www.ahmadnassri.com/',
+  github: 'ahmadnassri',
+  install: false
+}
+
+generator(options)
   .then(files => console.log(files)) //-> [array of files created]
 ```
 
@@ -110,8 +116,11 @@ generator('my-awesome-package', '~/Projects/my-awesome-package', options)
 
 | option        | description                               | default                               |
 | ------------- | ----------------------------------------- | ------------------------------------- |
+| `name`        | package name                              | ``                                    |
+| `path`        | installation path                         | ``                                    |
 | `author`      | author name                               | `process.env.NPM_AUTHOR_NAME`         |
 | `description` | package description                       | `process.env.NPM_PACKAGE_DESCRIPTION` |
+| `author`      | author name                               | `process.env.NPM_AUTHOR_NAME`         |
 | `email`       | author email                              | `process.env.NPM_AUTHOR_EMAIL`        |
 | `website`     | author website                            | `process.env.NPM_AUTHOR_WEBSITE`      |
 | `github`      | github account                            | `process.env.NPM_GITHUB_USERNAME`     |
