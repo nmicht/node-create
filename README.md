@@ -116,8 +116,8 @@ generator(options)
 
 | option        | description                               | default                               |
 | ------------- | ----------------------------------------- | ------------------------------------- |
-| `name`        | package name                              | ``                                    |
-| `path`        | installation path                         | ``                                    |
+| `name`        | package name                              |                                       |
+| `path`        | installation path                         |                                       |
 | `author`      | author name                               | `process.env.NPM_AUTHOR_NAME`         |
 | `description` | package description                       | `process.env.NPM_PACKAGE_DESCRIPTION` |
 | `author`      | author name                               | `process.env.NPM_AUTHOR_NAME`         |
