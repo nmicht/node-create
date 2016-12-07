@@ -34,7 +34,7 @@
     "pretest": "snazzy && echint",
     "test": "tap test --reporter spec --node-arg=--require --node-arg=babel-register",
     "test-cli": "babel-node src/bin.js",
-    "coverage": "tap test --reporter silent --coverage --coverage --nyc-arg=--require --nyc-arg=babel-register"
+    "coverage": "tap test --reporter silent --coverage --nyc-arg=--require --nyc-arg=babel-register"
   },
   "standard": {
     "ignore": [

@@ -27,7 +27,7 @@
     "compile": "babel -q src",
     "pretest": "snazzy && echint",
     "test": "tap test --reporter spec --node-arg=--require --node-arg=babel-register",
-    "coverage": "tap test --reporter silent --coverage --coverage --nyc-arg=--require --nyc-arg=babel-register"
+    "coverage": "tap test --reporter silent --coverage --nyc-arg=--require --nyc-arg=babel-register"
   },
   "standard": {
     "ignore": [
