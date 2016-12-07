@@ -25,7 +25,7 @@ import ${name} from '${name}'
 ${name}()
 ```
 
-## Targetted Builds
+## Targeted Builds
 
 an optimized build is made available for every major Node.js version marked as [Active LTS](https://github.com/nodejs/LTS).
 
