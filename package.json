@@ -9,9 +9,9 @@
     "url": "https://github.com/ahmadnassri/npm-package-generator.git"
   },
   "license": "ISC",
-  "main": "lib/generator.js",
+  "main": "build/generator.js",
   "bin": {
-    "npm-package-generator": "lib/bin.js"
+    "npm-package-generator": "build/bin.js"
   },
   "keywords": [
     "npm",
@@ -22,7 +22,7 @@
     "node": ">=4"
   },
   "files": [
-    "lib",
+    "build",
     "src",
     "template"
   ],
@@ -30,7 +30,7 @@
     "url": "https://github.com/ahmadnassri/npm-package-generator/issues"
   },
   "scripts": {
-    "compile": "babel -q src -d lib",
+    "compile": "babel -q src -d build",
     "pretest": "snazzy && echint",
     "test": "tap test --reporter spec --node-arg=--require --node-arg=babel-register",
     "test-cli": "babel-node src/bin.js",
@@ -38,13 +38,13 @@
   },
   "standard": {
     "ignore": [
-      "lib/**",
+      "build/**",
       "template/**"
     ]
   },
   "echint": {
     "ignore": [
-      "lib/**"
+      "build/**"
     ]
   },
   "devDependencies": {

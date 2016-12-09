@@ -32,7 +32,7 @@ I follow the below set of rules in all projects, `npm-package-generator` ensures
 
 ```
 /package-name/
-├── lib (compiled to Node v4)
+├── build (compiled to Node v4)
 │   ├── index.js
 │   ├── browsers (compiled to last 2 versions of top browsers)
 │   │   └── index.js
@@ -52,7 +52,7 @@ I follow the below set of rules in all projects, `npm-package-generator` ensures
     └── index.js
 ```
 
-- `/lib`: compiled library files, this is the default exposed output.
+- `/build`: compiled library files, this is the default exposed output.
 - `/src`: source library files: all common business logic, use this folder for your code
 
 ## Work in progress...

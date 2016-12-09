@@ -9,7 +9,7 @@
     "url": "https://github.com/${github}/${name}.git"
   },
   "license": "ISC",
-  "main": "lib/node4/index.js",
+  "main": "build/node4/index.js",
   "keywords": [
     "${name}"
   ],
@@ -17,7 +17,7 @@
     "node": ">=4"
   },
   "files": [
-    "lib",
+    "build",
     "src"
   ],
   "bugs": {
@@ -31,12 +31,12 @@
   },
   "standard": {
     "ignore": [
-      "lib/**"
+      "build/**"
     ]
   },
   "echint": {
     "ignore": [
-      "lib/**"
+      "build/**"
     ]
   },
   "devDependencies": {

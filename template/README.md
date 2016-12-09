@@ -31,13 +31,13 @@ an optimized build is made available for every major Node.js version marked as [
 
 ```js
 // Browsers (last 2 versions at time of last build)
-const ${name} = require('${name}/lib/browsers')
+const ${name} = require('${name}/build/browsers')
 
 // Node 7
-const ${name} = require('${name}/lib/node7')
+const ${name} = require('${name}/build/node7')
 
 // Node 6
-const ${name} = require('${name}/lib/node6')
+const ${name} = require('${name}/build/node6')
 
 // Node 4 (Default)
 var ${name} = require('${name}')
