@@ -30,7 +30,7 @@
     "url": "https://github.com/ahmadnassri/npm-package-generator/issues"
   },
   "scripts": {
-    "compile": "babel -q src -d build",
+    "build": "babel -q src -d build",
     "pretest": "snazzy && echint",
     "test": "tap test --reporter spec --node-arg=--require --node-arg=babel-register",
     "test-cli": "babel-node src/bin.js",

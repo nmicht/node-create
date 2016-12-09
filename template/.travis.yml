@@ -23,11 +23,7 @@ before_deploy:
   - npm install codeclimate-test-reporter
 
   - npm run coverage -- --coverage-report=text-lcov | codeclimate-test-reporter
-
-  - BABEL_ENV=v4 npm run compile -- -d build/node4
-  - BABEL_ENV=v6 npm run compile -- -d build/node6
-  - BABEL_ENV=v7 npm run compile -- -d build/node7
-  - BABEL_ENV=browsers npm run compile -- -d build/browsers
+  - npm run build
 
 deploy:
   skip_cleanup: true

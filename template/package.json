@@ -24,7 +24,8 @@
     "url": "https://github.com/${github}/${name}/issues"
   },
   "scripts": {
-    "compile": "babel -q src",
+    "babel": "babel -q src",
+    "build": "for i in node4 node6 node7 browsers; do BABEL_ENV=$i npm run babel -- -d build/$i; done",
     "pretest": "snazzy && echint",
     "test": "tap test --reporter spec --node-arg=--require --node-arg=babel-register",
     "coverage": "tap test --reporter silent --coverage --nyc-arg=--require --nyc-arg=babel-register"
