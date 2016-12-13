@@ -25,6 +25,14 @@ const options = {
     default: process.env.NPM_AUTHOR_NAME
   },
 
+  only: {
+    type: 'text',
+    demand: false,
+    description: 'Limit template scope',
+    default: 'all',
+    choices: ['all', 'projectfiles']
+  },
+
   description: {
     alias: 'd',
     type: 'text',
