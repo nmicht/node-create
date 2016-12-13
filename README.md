@@ -126,7 +126,7 @@ generator(options)
 | `github`      | github account                            | `process.env.NPM_GITHUB_USERNAME`     |
 | `install`     | run `npm install` and update dependencies | `false`                               |
 
-----
+---
 > :copyright: [ahmadnassri.com](https://www.ahmadnassri.com/) &nbsp;&middot;&nbsp;
 > License: [ISC][license-url] &nbsp;&middot;&nbsp;
 > Github: [@ahmadnassri](https://github.com/ahmadnassri) &nbsp;&middot;&nbsp;

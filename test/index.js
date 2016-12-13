@@ -69,7 +69,6 @@ tap.test('should return a list of files created', assert => {
         'test/tmp/README.md',
         'test/tmp/package.json',
         'test/tmp/src/index.js',
-        'test/tmp/test/build.js',
         'test/tmp/test/index.js'
       ])
     })

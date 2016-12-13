@@ -32,7 +32,7 @@
   "scripts": {
     "build": "babel -q src -d build",
     "lint": "snazzy && echint",
-    "pretest": "npm run lint && npm run build",
+    "pretest": "npm run lint",
     "test": "tap test --node-arg=--require --node-arg=babel-register",
     "test-cli": "babel-node src/bin.js",
     "coverage": "tap test --reporter silent --coverage --nyc-arg=--require --nyc-arg=babel-register"
