@@ -9,7 +9,7 @@
     "url": "https://github.com/ahmadnassri/npm-package-generator.git"
   },
   "license": "ISC",
-  "main": "build/generator.js",
+  "main": "build/index.js",
   "bin": {
     "npm-package-generator": "build/bin.js"
   },
@@ -31,7 +31,8 @@
   },
   "scripts": {
     "build": "babel -q src -d build",
-    "pretest": "snazzy && echint",
+    "lint": "snazzy && echint",
+    "pretest": "npm run lint && npm run build",
     "test": "tap test --reporter spec --node-arg=--require --node-arg=babel-register",
     "test-cli": "babel-node src/bin.js",
     "coverage": "tap test --reporter silent --coverage --nyc-arg=--require --nyc-arg=babel-register"
@@ -50,21 +51,19 @@
   "devDependencies": {
     "babel-cli": "^6.18.0",
     "babel-plugin-add-module-exports": "^0.2.1",
-    "babel-preset-env": "0.0.9",
+    "babel-preset-env": "1.0.2",
     "babel-register": "^6.18.0",
     "echint": "^2.1.0",
     "fs-readfile-promise": "^3.0.0",
-    "mkdirp": "^0.5.1",
-    "rimraf": "^2.5.4",
     "snazzy": "^5.0.0",
     "tap": "^8.0.1"
   },
   "dependencies": {
+    "@ahmadnassri/spawn-promise": "^1.1.0",
     "dotenv": "^2.0.0",
     "fs-writefile-promise": "^2.0.0",
     "glob-promise": "^2.0.0",
     "lodash.template": "^4.4.0",
-    "mkdirp-promise": "^4.0.1",
     "read-files-promise": "^1.1.1",
     "yargs": "^6.5.0"
   }

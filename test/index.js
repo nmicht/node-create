@@ -1,9 +1,8 @@
 import fs from 'fs'
-import generator from '../src/generator'
-import mkdirp from 'mkdirp-promise'
+import generator from '../src/'
 import path from 'path'
 import read from 'fs-readfile-promise'
-import rimraf from 'rimraf'
+import spawn from '@ahmadnassri/spawn-promise'
 import tap from 'tap'
 
 const options = {
@@ -18,15 +17,15 @@ const options = {
   quiet: true
 }
 
-tap.afterEach((done) => rimraf(options.path, done))
+tap.afterEach(done => spawn('rm', [ '-rf', options.path ]).then(_ => done()))
 
-tap.test('should populate template variables', (assert) => {
+tap.test('should populate template variables', assert => {
   assert.plan(4)
 
   return generator(options)
-    .then(() => read(path.join(options.path, 'package.json')))
+    .then(_ => read(path.join(options.path, 'package.json')))
     .then(JSON.parse)
-    .then((pkg) => {
+    .then(pkg => {
       assert.equal(pkg.name, 'foobar')
       assert.equal(pkg.description, options.description)
       assert.equal(pkg.author, `${options.author} <${options.email}> (${options.website})`)
@@ -34,7 +33,7 @@ tap.test('should populate template variables', (assert) => {
     })
 })
 
-tap.test('should use process.cwd', (assert) => {
+tap.test('should use process.cwd', assert => {
   assert.plan(1)
 
   let cwd = process.cwd()
@@ -43,23 +42,23 @@ tap.test('should use process.cwd', (assert) => {
 
   delete opts.path
 
-  return mkdirp('/tmp/foo')
-    .then(() => process.chdir('/tmp/foo'))
-    .then(() => generator(opts))
-    .then((files) => {
+  return spawn('mkdir', [ '-p', '/tmp/foo' ])
+    .then(_ => process.chdir('/tmp/foo'))
+    .then(_ => generator(opts))
+    .then(files => {
       var file = path.dirname(files.pop())
 
       assert.equal('/tmp/foo/test', file)
     })
 
-    .then(() => process.chdir(cwd)) // return to cwd
+    .then(_ => process.chdir(cwd)) // return to cwd
 })
 
-tap.test('should return a list of files created', (assert) => {
+tap.test('should return a list of files created', assert => {
   assert.plan(1)
 
   return generator(options)
-    .then((files) => {
+    .then(files => {
       assert.same(files, [
         'test/tmp/.babelrc',
         'test/tmp/.codeclimate.yml',
@@ -70,19 +69,20 @@ tap.test('should return a list of files created', (assert) => {
         'test/tmp/README.md',
         'test/tmp/package.json',
         'test/tmp/src/index.js',
+        'test/tmp/test/build.js',
         'test/tmp/test/index.js'
       ])
     })
 })
 
-tap.test('should install dependencies', { timeout: 10000 }, (assert) => {
+tap.test('should install dependencies', { timeout: 10000 }, assert => {
   assert.plan(1)
 
   let opts = Object.assign({}, options)
 
   Object.assign(opts, { path: '/tmp/npm-package-genrator/test', install: true })
 
-  return mkdirp(opts.path)
-    .then((dir) => generator(opts))
-    .then((files) => fs.stat(path.join(opts.path, 'node_modules'), (err, stats) => assert.error(err)))
+  return spawn('mkdir', [ '-p', opts.path ])
+    .then(_ => generator(opts))
+    .then(files => fs.stat(path.join(opts.path, 'node_modules'), (err, stats) => assert.error(err)))
 })
