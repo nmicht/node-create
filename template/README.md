@@ -44,9 +44,9 @@ var ${name} = require('${name}')
 ```
 
 ---
-> :copyright: [${domain}](${website}) &nbsp;&middot;&nbsp;
-> License: [ISC][license-url] &nbsp;&middot;&nbsp;
-> Github: [@${github}](https://github.com/${github}) &nbsp;&middot;&nbsp;
+> :copyright: [${domain}](${website})  · 
+> License: [ISC][license-url]  · 
+> Github: [@${github}](https://github.com/${github})  · 
 > Twitter: [@${github}](https://twitter.com/${github})
 
 [license-url]: http://choosealicense.com/licenses/isc/
