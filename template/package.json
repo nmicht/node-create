@@ -24,9 +24,9 @@
     "url": "https://github.com/${github}/${name}/issues"
   },
   "scripts": {
-    "babel": "babel -q src",
-    "build": "for i in node4 node6 node7 browsers; do BABEL_ENV=$i npm run babel -- -d build/$i; done",
-    "pretest": "snazzy && echint",
+    "build": "babel-build-all",
+    "lint": "snazzy && echint",
+    "pretest": "npm run lint && npm run build",
     "test": "tap test --reporter spec --node-arg=--require --node-arg=babel-register",
     "coverage": "tap test --reporter silent --coverage --nyc-arg=--require --nyc-arg=babel-register"
   },
@@ -41,7 +41,7 @@
     ]
   },
   "devDependencies": {
-    "babel-cli": "*",
+    "@ahmadnassri/babel-build-all": "*",
     "babel-plugin-add-module-exports": "*",
     "babel-preset-env": "*",
     "babel-register": "*",
