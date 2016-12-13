@@ -16,14 +16,9 @@ cache:
     - node_modules
     - /tmp/npm-package-genrator/test
 
-before_script:
-  - npm prune
-
 before_deploy:
-  - npm install semantic-release
-  - npm install codeclimate-test-reporter
+  - npm install codeclimate-test-reporter semantic-release
   - npm run coverage -- --coverage-report=text-lcov | codeclimate-test-reporter
-  - npm run build
 
 deploy:
   skip_cleanup: true
