@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import dotenv from 'dotenv'
-import generator from './generator'
+import generator from './index'
 import yargs from 'yargs'
 
 // load configuration from environment
