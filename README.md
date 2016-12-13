@@ -1,4 +1,4 @@
-# npm-package-generator [![version][npm-version]][npm-url] [![License][npm-license]][license-url]
+# NPM Package Generator [![version][npm-version]][npm-url] [![License][license-image]][license-url]
 
 > an opinionated npm package template
 
@@ -133,12 +133,12 @@ generator(options)
 > Twitter: [@ahmadnassri](https://twitter.com/ahmadnassri)
 
 [license-url]: http://choosealicense.com/licenses/isc/
+[license-image]: https://img.shields.io/github/license/ahmadnassri/npm-package-generator.svg?style=flat-square
 
 [travis-url]: https://travis-ci.org/ahmadnassri/npm-package-generator
 [travis-image]: https://img.shields.io/travis/ahmadnassri/npm-package-generator.svg?style=flat-square
 
 [npm-url]: https://www.npmjs.com/package/npm-package-generator
-[npm-license]: https://img.shields.io/npm/l/npm-package-generator.svg?style=flat-square
 [npm-version]: https://img.shields.io/npm/v/npm-package-generator.svg?style=flat-square
 [npm-downloads]: https://img.shields.io/npm/dm/npm-package-generator.svg?style=flat-square
 
