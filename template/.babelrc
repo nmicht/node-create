@@ -1,26 +1,23 @@
 {
-  "env": {
-    "development": {
-      "presets": [ ["env", { "targets": { "node": "current" } }] ],
-      "plugins": []
-    },
+  "presets": [ ["env", { "targets": { "node": "current" } }] ],
 
+  "env": {
     "browsers": {
       "presets": [ ["env", { "targets": { "browsers": ["last 2 versions"] } }] ],
       "plugins": ["add-module-exports"]
     },
 
-    "v4": {
+    "node4": {
       "presets": [ ["env", { "targets": { "node": 4.0 } }] ],
       "plugins": ["add-module-exports"]
     },
 
-    "v6": {
+    "node6": {
       "presets": [ ["env", { "targets": { "node": 6.0 } }] ],
       "plugins": ["add-module-exports"]
     },
 
-    "v7": {
+    "node7": {
       "presets": [ ["env", { "targets": { "node": 7.0 } }] ],
       "plugins": ["add-module-exports"]
     }
