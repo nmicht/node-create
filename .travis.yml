@@ -1,6 +1,7 @@
 language: node_js
 
 node_js:
+ - 8
  - 7
  - 6
  - 4
@@ -23,11 +24,11 @@ before_deploy:
 deploy:
   skip_cleanup: true
   provider: script
-  script: semantic-release pre && npm publish && semantic-release post || true
+  script: semantic-release pre && npm publish && semantic-release post
 
   on:
     branch: master
-    node: 7
+    node: 8
 
 branches:
   except:
