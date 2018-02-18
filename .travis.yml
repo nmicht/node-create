@@ -17,7 +17,7 @@ stages:
   - coverage
   - release
 
-before_script: export PATH=$PATH:$TRAVIS_BUILD_DIR/.scripts
+before_install: export PATH=$PATH:$TRAVIS_BUILD_DIR/.scripts
 
 jobs:
   include:
