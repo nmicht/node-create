@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+find . -maxdepth 1 \( -name '*.json' -o -name '*.md' \) -exec sed -i "s/npm-starter-kit/$1/g" {} +
