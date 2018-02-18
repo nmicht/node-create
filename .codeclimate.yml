@@ -8,6 +8,7 @@ plugins:
         javascript:
           patterns:
             - test/*.js
+
   csslint:
     enabled: true
 
@@ -30,6 +31,6 @@ plugins:
     enabled: true
 
 exclude_patterns:
-  - template/**
+  - .nyc_output/**
   - node_modules/**
   - coverage/**
