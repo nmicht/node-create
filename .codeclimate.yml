@@ -1,0 +1,35 @@
+version: "2"
+
+plugins:
+  duplication:
+    enabled: true
+    config:
+      languages:
+        javascript:
+          patterns:
+            - test/*.js
+  csslint:
+    enabled: true
+
+  eslint:
+    enabled: true
+
+  fixme:
+    enabled: true
+
+  nodesecurity:
+    enabled: true
+
+  markdownlint:
+    enabled: true
+
+  shellcheck:
+    enabled: true
+
+  editorconfig:
+    enabled: true
+
+exclude_patterns:
+  - template/**
+  - node_modules/**
+  - coverage/**
