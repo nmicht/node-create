@@ -32,5 +32,5 @@ plugins:
 
 exclude_patterns:
   - .nyc_output/**
-  - node_modules/**
   - coverage/**
+  - node_modules/**
