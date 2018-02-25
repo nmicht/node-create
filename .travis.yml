@@ -31,9 +31,9 @@ jobs:
       after_script: test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 
     - stage: release
-      branch: master
       node: 9
       script: npx semantic-release
+      if: branch = master
 
 branches:
   except:
