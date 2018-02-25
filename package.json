@@ -1,6 +1,6 @@
 {
   "version": "0.0.0-development",
-  "name": "npm-starter-kit",
+  "name": "@ahmadnassri/npm-starter-kit",
   "description": "an opinionated npm package template",
   "author": "Ahmad Nassri <ahmad@ahmadnassri.com> (https://www.ahmadnassri.com/)",
   "homepage": "https://github.com/ahmadnassri/npm-starter-kit",
@@ -11,6 +11,9 @@
   "license": "ISC",
   "main": "index.js",
   "keywords": [],
+  "publishConfig": {
+    "access": "public"
+  },
   "engines": {
     "node": ">=6"
   },
@@ -21,18 +24,14 @@
   "bugs": {
     "url": "https://github.com/ahmadnassri/npm-starter-kit/issues"
   },
-  "config": {
-    "commitizen": {
-      "path": "cz-conventional-changelog"
-    }
-  },
   "scripts": {
-    "pretest": ".scripts/codeclimate analyze",
-    "test": "tap test --100 --coverage-report=lcov --no-browser",
+    "pretest": "npm run test:codeclimate",
+    "test": "npm run test:tap",
+    "test:codeclimate": ".scripts/codeclimate analyze",
+    "test:tap": "tap test --100 --coverage-report=lcov --no-browser",
     "coverage": "opener coverage/lcov-report/index.html"
   },
   "devDependencies": {
-    "tap": "^11.1.1"
-  },
-  "dependencies": {}
+    "tap": "^11.1.0"
+  }
 }
