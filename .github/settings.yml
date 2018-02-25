@@ -23,9 +23,6 @@ labels:
   - name: chore
     color: FEF2C0
 
-  - name: test
-    color: FAD8C7
-
   - name: discussion
     color: CC317C
     oldname: help wanted
