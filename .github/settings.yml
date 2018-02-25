@@ -14,59 +14,49 @@ repository:
   allow_rebase_merge: true
 
 labels:
-  - name: "Priority: Low"
-    color: 009800
+  - name: bug
+    color: EE3F46
 
-  - name: "Priority: Medium"
-    color: fbca04
+  - name: security
+    color: EE3F46
 
-  - name: "Priority: High"
-    color: eb6420
+  - name: chore
+    color: FEF2C0
 
-  - name: "Priority: Critical"
-    color: e11d21
+  - name: test
+    color: FAD8C7
 
-  - name: "Status: Abandoned"
-    color: 000000
+  - name: discussion
+    color: CC317C
+    oldname: help wanted
 
-  - name: "Status: Accepted"
-    color: 009800
+  - name: question
+    color: CC317C
 
-  - name: "Status: Available"
-    color: bfe5bf
+  - name: enhancement
+    color: 5EBEFF
 
-  - name: "Status: Blocked"
-    color: e11d21
+  - name: optimizaiton
+    color: 5EBEFF
 
-  - name: "Status: Completed"
-    color: 006b75
+  - name: feature
+    color: 91CA55
+    oldname: good first issue
 
-  - name: "Status: In Progress"
-    color: cccccc
+  - name: in progress
+    color: FBCA04
 
-  - name: "Status: On Hold"
-    color: e11d21
+  - name: watchlist
+    color: FBCA04
 
-  - name: "Status: Review Needed"
-    color: fbca04
+  - name: invalid
+    color: D2DAE1
 
-  - name: "Status: Revision Needed"
-    color: e11d21
+  - name: wontfix
+    color: D2DAE1
 
-  - name: "Type: Bug"
-    color: e11d21
+  - name: duplicate
+    color: D2DAE1
 
-  - name: "Type: Maintenance"
-    color: fbca04
-
-  - name: "Type: Enhancement"
-    color: 84b6eb
-
-  - name: "Type: Question"
-    color: cc317c
-
-  - name: "¯\\_[ツ]_/¯"
-    color: FFC107
-
-  - name: "[ノಠ益ಠ]ノ彡┻━┻"
-    color: 333333
+  - name: on hold
+    color: D2DAE1
