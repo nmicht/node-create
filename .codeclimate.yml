@@ -29,6 +29,7 @@ plugins:
 
   editorconfig:
     enabled: true
+    channel: beta
 
 exclude_patterns:
   - .nyc_output/**
