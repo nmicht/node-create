@@ -32,8 +32,8 @@
     ```
 
     ---
-    > :copyright: [ahmadnassri.com](https://www.ahmadnassri.com) &bull; 
     > License: [ISC][license-url] &bull; 
+    > Copyright: [ahmadnassri.com](https://www.ahmadnassri.com) &bull; 
     > Github: [@ahmadnassri](https://github.com/ahmadnassri) &bull; 
     > Twitter: [@ahmadnassri](https://twitter.com/ahmadnassri)
 
@@ -48,5 +48,5 @@
     [npm-downloads]: https://img.shields.io/npm/dm/npm-starter-kit.svg?style=flat-square
 
     [codeclimate-url]: https://codeclimate.com/github/ahmadnassri/npm-starter-kit
-    [codeclimate-coverage]: https://api.codeclimate.com/v1/badges/828a92fb29ebd63ab9f2/test_coverage  
+    [codeclimate-coverage]: https://api.codeclimate.com/v1/badges/[REPLACEME]/test_coverage?style=flat-square
 ```
