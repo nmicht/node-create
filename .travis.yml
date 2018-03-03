@@ -39,5 +39,3 @@ jobs:
       script: npx semantic-release
       if: branch = master
       if: type IN (push)
-      if: env(GH_TOKEN) IS present
-      if: env(NPM_TOKEN) IS present
