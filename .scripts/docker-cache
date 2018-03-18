@@ -10,14 +10,18 @@ images=(codeclimate duplication csslint eslint fixme nodesecurity markdownlint s
 save () {
   local image=${1}
 
-  echo "saving $image"
   if [ $image = "codeclimate" ]; then
     source=ahmadnassri/codeclimate:fail-on-exit
   else
     source=codeclimate/codeclimate-$image
   fi
 
+  docker pull $source
+
+  echo "saving $image"
   docker save -o $CACHE/$image.tar $source
+
+  load $image
 }
 
 load () {
@@ -27,5 +31,5 @@ load () {
 
 for image in "${images[@]}"
 do
-test -f $CACHE/$image.tar && load $image || save $image; load $image
+test -f $CACHE/$image.tar && load $image || save $image
 done
