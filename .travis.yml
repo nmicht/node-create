@@ -23,11 +23,13 @@ stages:
 
 before_install: export PATH=$PATH:$TRAVIS_BUILD_DIR/.scripts
 
+before_script: docker-cache
+
 jobs:
   include:
     - stage: cache
       node: 9
-      script: docker-cache
+      script: true
 
     - stage: coverage
       node: 9
