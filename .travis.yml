@@ -11,7 +11,7 @@ node_js:
 
 cache:
   directories:
-    - ~/docker
+    - ~/docker-cache
     - node_modules
 
 stages:
@@ -20,13 +20,14 @@ stages:
   - coverage
   - release
 
+
 before_install: export PATH=$PATH:$TRAVIS_BUILD_DIR/.scripts
 
 jobs:
   include:
     - stage: cache
       node: 9
-      script: codeclimate engines:install
+      script: docker-cache
 
     - stage: coverage
       node: 9
@@ -41,13 +42,3 @@ jobs:
       if: branch = master
       if: type IN (push)
 
-
-before_script:
-  - sudo service docker stop
-  - if [ "$(ls -A /home/travis/docker)" ]; then echo "/home/travis/docker already set"; else sudo mv /var/lib/docker /home/travis/docker; fi
-  - sudo bash -c "echo 'DOCKER_OPTS=\"-H tcp://127.0.0.1:2375 -H unix:///var/run/docker.sock -g /home/travis/docker\"' > /etc/default/docker"
-  - sudo service docker start
-
-before_cache:
-  - sudo service docker stop
-  - sudo chown -R travis ~/docker
