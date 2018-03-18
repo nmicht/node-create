@@ -6,12 +6,13 @@ mkdir -p $CACHE
 
 images=(codeclimate duplication csslint eslint fixme nodesecurity markdownlint shellcheck editorconfig)
 
-
 save () {
   local image=${1}
 
   if [ $image = "codeclimate" ]; then
     source=ahmadnassri/codeclimate:fail-on-exit
+  elif [ $image = "editorconfig" ]; then
+    source=codeclimate/codeclimate-$image:beta
   else
     source=codeclimate/codeclimate-$image
   fi
