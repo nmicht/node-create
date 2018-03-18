@@ -23,7 +23,7 @@ stages:
 
 before_install: export PATH=$PATH:$TRAVIS_BUILD_DIR/.scripts
 
-before_script: docker-cache
+before_script: ls -al ~/docker-cache && docker-cache
 
 jobs:
   include:
