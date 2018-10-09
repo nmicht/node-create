@@ -10,7 +10,7 @@
     "url": "https://github.com/ahmadnassri/node-create-library.git"
   },
   "license": "MIT",
-  "main": "index.js",
+  "bin": "index.js",
   "keywords": [
     "npm",
     "init",
