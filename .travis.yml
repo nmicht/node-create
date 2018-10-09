@@ -2,8 +2,6 @@ if: tag IS blank
 
 language: node_js
 
-services: docker
-
 node_js: 10
 
 cache:
@@ -17,10 +15,11 @@ stages:
 jobs:
   include:
     - stage: test
-      script: true
+      script: skip
 
     - stage: release
       node: 10
+      install: npm install @ahmadnassri/semantic-release
       script: npx semantic-release
       if: branch = master
       if: type IN (push)
