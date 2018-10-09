@@ -1,9 +1,9 @@
 repository:
-  name: node-create-library
-  description: an opinionated npm package template
-  topics: npm, init, template
-  homepage: https://www.ahmadnassri.com/
-  private: false
+  name: [repo.name]
+  description: [repo.description]
+  topics: [project.topics]
+  homepage: [project.website]
+  private: [project.private]
   has_issues: true
   has_wiki: false
   has_downloads: false

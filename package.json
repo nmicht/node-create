@@ -1,19 +1,21 @@
 {
+  "private": false,
   "version": "0.0.0-development",
-  "name": "@ahmadnassri/npm-starter-kit",
+  "name": "@ahmadnassri/create-library",
   "description": "an opinionated npm package template",
   "author": "Ahmad Nassri <ahmad@ahmadnassri.com> (https://www.ahmadnassri.com/)",
-  "homepage": "https://github.com/ahmadnassri/npm-starter-kit",
+  "homepage": "https://github.com/ahmadnassri/node-create-library",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ahmadnassri/npm-starter-kit.git"
+    "url": "https://github.com/ahmadnassri/node-create-library.git"
   },
-  "license": "ISC",
+  "license": "MIT",
   "main": "index.js",
-  "keywords": [],
-  "publishConfig": {
-    "access": "public"
-  },
+  "keywords": [
+    "npm",
+    "init",
+    "template"
+  ],
   "engines": {
     "node": ">=6"
   },
@@ -22,16 +24,14 @@
     "index.js"
   ],
   "bugs": {
-    "url": "https://github.com/ahmadnassri/npm-starter-kit/issues"
+    "url": "https://github.com/ahmadnassri/node-create-library/issues"
   },
-  "scripts": {
-    "pretest": "npm run test:codeclimate",
-    "test": "npm run test:tap",
-    "test:codeclimate": ".scripts/codeclimate analyze",
-    "test:tap": "tap test --100 --coverage-report=lcov --no-browser",
-    "coverage": "opener coverage/lcov-report/index.html"
-  },
-  "devDependencies": {
-    "tap": "^11.1.0"
+  "scripts": {},
+  "dependencies": {
+    "fast-glob": "^2.2.3",
+    "inquirer": "^6.2.0",
+    "mkdirp": "^0.5.1",
+    "spdx-license-list": "^4.1.0",
+    "yargs": "^12.0.2"
   }
 }

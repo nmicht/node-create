@@ -29,8 +29,6 @@ Follow the provided [Issue Template](./ISSUE_TEMPLATE.md) to ensure a fast and d
 
 You will need [Node.js](http://nodejs.org), we typically target **ALL [LTS][lts] versions**, confirm this project's list of supported versions in `package.json`
 
-We use Code Climate CLI as a pre-test step to run some validations, you can download and run the [Code Climate CLI](https://github.com/codeclimate/codeclimate) yourself, or rely on the CI Server to run it when you make your PR
-
 ### Committing Changes
 
 Commit messages should follow the [commit message convention](./COMMIT_CONVENTION.md) so that changelogs can be automatically generated. Commit messages will be automatically validated upon commit.
@@ -41,7 +39,6 @@ There are a few scripts available in the `scripts` section of the `package.json`
 
 The default `test` script will do the following: 
 
-* run `codeclimate analyze` as a pre-test step
 * runs `tap test` with enforcement of 100% coverage
 
 [code-of-conduct]: ./CODE_OF_CONDUCT.md

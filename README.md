@@ -1,52 +1,25 @@
-# NPM Starter Kit
+# NPM Create Library [![version][npm-version]][npm-url] [![License][license-image]][license-url] [![Build Status][travis-image]][travis-url] [![Downloads][npm-downloads]][npm-url]
+
+> an opinionated npm package template
 
 ## Usage
 
-- clone this repository
-- run `rename` script:
-
-  ```bash
-  .scripts/rename new-project-name
-  ```
-- update the `README.md` file with:
-
-```markdown
-    # npm-starter-kit [![version][npm-version]][npm-url] [![License][license-image]][license-url] [![Build Status][travis-image]][travis-url] [![Downloads][npm-downloads]][npm-url] [![Coverage Status][codeclimate-coverage]][codeclimate-url]
-
-    > a simple npm package starter kit
-
-    ## Install
-
-    ```bash
-    npm install --production --save npm-starter-kit
-    ```
-
-    ## API
-
-    ### lib()
-
-    ```js
-    import lib from 'npm-starter-kit'
-
-    lib()
-    ```
-
-    ---
-    > License: [ISC][license-url] &bull; 
-    > Copyright: [ahmadnassri.com](https://www.ahmadnassri.com) &bull; 
-    > Github: [@ahmadnassri](https://github.com/ahmadnassri) &bull; 
-    > Twitter: [@ahmadnassri](https://twitter.com/ahmadnassri)
-
-    [license-url]: http://choosealicense.com/licenses/isc/
-    [license-image]: https://img.shields.io/github/license/ahmadnassri/npm-starter-kit.svg?style=flat-square
-
-    [travis-url]: https://travis-ci.org/ahmadnassri/npm-starter-kit
-    [travis-image]: https://img.shields.io/travis/ahmadnassri/npm-starter-kit.svg?style=flat-square
-
-    [npm-url]: https://www.npmjs.com/package/npm-starter-kit
-    [npm-version]: https://img.shields.io/npm/v/npm-starter-kit.svg?style=flat-square
-    [npm-downloads]: https://img.shields.io/npm/dm/npm-starter-kit.svg?style=flat-square
-
-    [codeclimate-url]: https://codeclimate.com/github/ahmadnassri/npm-starter-kit
-    [codeclimate-coverage]: https://api.codeclimate.com/v1/badges/[REPLACEME]/test_coverage?style=flat-square
 ```
+npm init @ahmadnassri/library
+```
+
+---
+> License: [MIT License][license-url] &bull; 
+> Copyright: [Ahmad Nassri](https://www.ahmadnassri.com/) &bull; 
+> Github: [@ahmadnassri](https://github.com/ahmadnassri) &bull; 
+> Twitter: [@ahmadnassri](https://twitter.com/ahmadnassri)
+
+[license-url]: http://www.opensource.org/licenses/MIT
+[license-image]: https://img.shields.io/github/license/ahmadnassri/node-create-library.svg?style=flat-square
+
+[travis-url]: https://travis-ci.org/ahmadnassri/node-create-library
+[travis-image]: https://img.shields.io/travis/ahmadnassri/node-create-library.svg?style=flat-square
+
+[npm-url]: https://www.npmjs.com/package/@ahmadnassri/create-library
+[npm-version]: https://img.shields.io/npm/v/@ahmadnassri/create-library.svg?style=flat-square
+[npm-downloads]: https://img.shields.io/npm/dm/@ahmadnassri/create-library.svg?style=flat-square
