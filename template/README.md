@@ -36,4 +36,3 @@ lib()
 
 [codeclimate-url]: https://codeclimate.com/github/[repo.github]/[repo.name]
 [codeclimate-coverage]: https://api.codeclimate.com/v1/badges/[REPLACEME]/test_coverage?style=flat-square
-w

@@ -4,8 +4,7 @@ language: node_js
 
 services: docker
 
-node_js:
-  - 10
+node_js: 10
 
 cache:
   directories:
@@ -21,7 +20,7 @@ jobs:
       script: true
 
     - stage: release
-      node: 9
+      node: 10
       script: npx semantic-release
       if: branch = master
       if: type IN (push)
