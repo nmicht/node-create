@@ -24,3 +24,10 @@ jobs:
       script: npx semantic-release
       if: branch = master
       if: type IN (push)
+
+notifications:
+  email:
+    recipients:
+      - email+travis@ahmad.codes
+    on_success: never
+    on_failure: always
