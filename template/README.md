@@ -5,7 +5,7 @@
 ## Install
 
 ```bash
-npm install --production --save [package.name]
+npm install [package.name]
 ```
 
 ## API
