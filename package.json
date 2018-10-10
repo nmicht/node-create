@@ -1,6 +1,6 @@
 {
   "private": false,
-  "version": "1.0.3",
+  "version": "1.0.4",
   "name": "@ahmadnassri/create-library",
   "description": "an opinionated npm package template",
   "author": "Ahmad Nassri <ahmad@ahmadnassri.com> (https://www.ahmadnassri.com/)",
