@@ -20,7 +20,7 @@ jobs:
 
     - stage: release
       node: 10
-      install: npm install @ahmadnassri/semantic-release
+      install: npm install -g @ahmadnassri/semantic-release
       script: npx semantic-release
       if: branch = master
       if: type IN (push)
