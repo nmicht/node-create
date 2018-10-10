@@ -28,6 +28,7 @@
   },
   "scripts": {},
   "dependencies": {
+    "@ahmadnassri/semantic-release": "^1.0.4",
     "fast-glob": "^2.2.3",
     "inquirer": "^6.2.0",
     "mkdirp": "^0.5.1",
