@@ -10,5 +10,7 @@ const builder = () => {
   })
 }
 
-yargs.command('$0 [path]', 'initiate a new project', builder, template)
+/* eslint-disable no-unused-expressions */
+yargs
+  .command('$0 [path]', 'initiate a new project', builder, template)
   .argv
