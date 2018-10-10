@@ -19,8 +19,7 @@ lib()
 ```
 
 ---
-> License: [[license.name]][license-url] &bull; 
-> Copyright: [[author.name]]([author.website]) &bull; 
+> Author: [[author.name]]([author.website]) &bull; 
 > Github: [@[repo.github]](https://github.com/[repo.github]) &bull; 
 > Twitter: [@[author.twitter]](https://twitter.com/[author.twitter])
 

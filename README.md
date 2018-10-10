@@ -9,8 +9,7 @@ npm init @ahmadnassri/library
 ```
 
 ---
-> License: [MIT License][license-url] &bull; 
-> Copyright: [Ahmad Nassri](https://www.ahmadnassri.com/) &bull; 
+> Author: [Ahmad Nassri](https://www.ahmadnassri.com/) &bull; 
 > Github: [@ahmadnassri](https://github.com/ahmadnassri) &bull; 
 > Twitter: [@ahmadnassri](https://twitter.com/ahmadnassri)
 
