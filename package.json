@@ -1,13 +1,13 @@
 {
   "private": false,
   "version": "1.2.0",
-  "name": "@ahmadnassri/create-library",
+  "name": "@ahmadnassri/create",
   "description": "an opinionated npm package template",
   "author": "Ahmad Nassri <ahmad@ahmadnassri.com> (https://www.ahmadnassri.com/)",
-  "homepage": "https://github.com/ahmadnassri/node-create-library",
+  "homepage": "https://github.com/ahmadnassri/node-create",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ahmadnassri/node-create-library.git"
+    "url": "https://github.com/ahmadnassri/node-create.git"
   },
   "license": "MIT",
   "bin": "index.js",
@@ -25,7 +25,7 @@
     "index.js"
   ],
   "bugs": {
-    "url": "https://github.com/ahmadnassri/node-create-library/issues"
+    "url": "https://github.com/ahmadnassri/node-create/issues"
   },
   "scripts": {},
   "dependencies": {

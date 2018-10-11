@@ -1,5 +1,5 @@
 repository:
-  name: node-create-library
+  name: node-create
   description: an opinionated npm package template
   topics: npm, init, template
   homepage: https://www.ahmadnassri.com/
