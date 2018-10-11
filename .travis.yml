@@ -9,15 +9,10 @@ cache:
     - node_modules
 
 stages:
-  - test
   - release
 
 jobs:
   include:
-    - stage: test
-      install: skip
-      script: skip
-
     - stage: release
       node: 10
       install: npm install --no-save @ahmadnassri/semantic-release
