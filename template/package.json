@@ -1,31 +1,35 @@
 {
-  "private": [project.private],
+  "private": [private],
   "version": "0.0.0-development",
-  "name": "[package.name]",
-  "description": "[package.description]",
-  "author": "[author.name] <[author.email]> ([author.website])",
-  "homepage": "https://github.com/[repo.github]/[repo.name]",
+  "name": "@[org]/[name]",
+  "description": "[description]",
+  "author": "[author] <[email]> ([website])",
+  "homepage": "[homepage]",
   "repository": {
     "type": "git",
-    "url": "https://github.com/[repo.github]/[repo.name].git"
+    "url": "https://github.com/[org]/[name].git"
   },
-  "license": "[project.license]",
+  "license": "[license]",
   "main": "index.js",
-  "keywords": [project.keywords],
+  "keywords": [keywords],
   "engines": {
-    "node": ">=6"
+    "node": ">=8"
   },
   "files": [
     "lib",
     "index.js"
   ],
   "bugs": {
-    "url": "https://github.com/[repo.github]/[repo.name]/issues"
+    "url": "https://github.com/[org]/[name]/issues"
   },
   "scripts": {
-    "test": "npm run test:tap",
+    "lint:deps": "npx david --error404 --errorSCM --errorDepType",
+    "lint:ec": "npx editorconfig-checker .",
+    "lint:js": "npx eslint .",
+    "lint": "npx run-p lint:*",
+    "open:coverage": "opener coverage/lcov-report/index.html",
     "test:tap": "tap test --100 --coverage-report=lcov --no-browser",
-    "coverage": "opener coverage/lcov-report/index.html"
+    "test": "npx run-p test:*"
   },
   "devDependencies": {
     "tap": "^11.1.0"

@@ -1,37 +1,33 @@
-# [project.name] [![version][npm-version]][npm-url] [![License][license-image]][license-url] [![Build Status][travis-image]][travis-url] [![Downloads][npm-downloads]][npm-url] [![Coverage Status][codeclimate-coverage]][codeclimate-url]
+# [title]
 
-> [project.description]
+[![License][license-image]][license-url] [![version][npm-image]][npm-url] [![Build Status][circle-image]][circle-url]
+
+> [description]
 
 ## Install
 
 ```bash
-npm install [package.name]
+npm install @[org]/[name]
 ```
 
-## API
-
-### lib()
+## Usage
 
 ```js
-import lib from '[package.name]'
+import [name] from '@[org]/[name]'
 
-lib()
+[name]()
 ```
 
 ---
-> Author: [[author.name]]([author.website]) &bull; 
-> Github: [@[repo.github]](https://github.com/[repo.github]) &bull; 
-> Twitter: [@[author.twitter]](https://twitter.com/[author.twitter])
+> Author: [[author]]([website]) &bull; 
+> Github: [@[org]](https://github.com/[org]) &bull; 
+> Twitter: [@[twitter]](https://twitter.com/[twitter])
 
-[license-url]: [license.url]
-[license-image]: https://img.shields.io/github/license/[repo.github]/[repo.name].svg?style=flat-square
+[license-url]: https://choosealicense.com/licenses/[license]
+[license-image]: https://img.shields.io/github/license/[org]/[name].svg?style=for-the-badge&logo=circleci
 
-[travis-url]: https://travis-ci.org/[repo.github]/[repo.name]
-[travis-image]: https://img.shields.io/travis/[repo.github]/[repo.name].svg?style=flat-square
+[circle-url]: https://circleci.com/gh/[org]/[name]
+[circle-image]: https://img.shields.io/circleci/project/github/[org]/[name]/master.svg?style=for-the-badge&logo=circleci
 
-[npm-url]: https://www.npmjs.com/package/[package.name]
-[npm-version]: https://img.shields.io/npm/v/[package.name].svg?style=flat-square
-[npm-downloads]: https://img.shields.io/npm/dm/[package.name].svg?style=flat-square
-
-[codeclimate-url]: https://codeclimate.com/github/[repo.github]/[repo.name]
-[codeclimate-coverage]: https://api.codeclimate.com/v1/badges/[REPLACEME]/test_coverage?style=flat-square
+[npm-url]: https://www.npmjs.com/package/@[org]/[name]
+[npm-image]: https://img.shields.io/npm/v/@[org]/[name].svg?style=for-the-badge&logo=npm

@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-const template = require('./lib/template')
+
+const scaffold = require('./lib/scaffold')
 const yargs = require('yargs')
 
 const builder = () => {
@@ -12,5 +13,5 @@ const builder = () => {
 
 /* eslint-disable no-unused-expressions */
 yargs
-  .command('$0 [path]', 'initiate a new project', builder, template)
+  .command('$0 [path]', 'initiate a new project', builder, scaffold)
   .argv
