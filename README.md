@@ -1,6 +1,6 @@
 # NPM Library Initializer
 
-[![version][npm-image]][npm-url] [![Build Status][circle-image]][circle-url]
+[![License][license-image]][license-url] [![version][npm-image]][npm-url] [![Build Status][circle-image]][circle-url]
 
 > an opinionated [npm package initializer][npm/init]
 
@@ -25,6 +25,9 @@ npm init @ahmadnassri/library
 > Author: [Ahmad Nassri](https://www.ahmadnassri.com/) &bull; 
 > Github: [@ahmadnassri](https://github.com/ahmadnassri) &bull; 
 > Twitter: [@AhmadNassri](https://twitter.com/AhmadNassri)
+
+[license-url]: LICENSE
+[license-image]: https://img.shields.io/github/license/ahmadnassri/node-create.svg?style=for-the-badge&logo=circleci
 
 [circle-url]: https://circleci.com/gh/ahmadnassri/node-create
 [circle-image]: https://img.shields.io/circleci/project/github/ahmadnassri/node-create/master.svg?style=for-the-badge&logo=circleci

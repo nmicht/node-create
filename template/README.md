@@ -23,7 +23,7 @@ import [name] from '@[org]/[name]'
 > Github: [@[org]](https://github.com/[org]) &bull; 
 > Twitter: [@[twitter]](https://twitter.com/[twitter])
 
-[license-url]: https://choosealicense.com/licenses/[license]
+[license-url]: LICENSE
 [license-image]: https://img.shields.io/github/license/[org]/[name].svg?style=for-the-badge&logo=circleci
 
 [circle-url]: https://circleci.com/gh/[org]/[name]
