@@ -26,8 +26,8 @@ npm init @ahmadnassri/library
 > Github: [@ahmadnassri](https://github.com/ahmadnassri) &bull; 
 > Twitter: [@AhmadNassri](https://twitter.com/AhmadNassri)
 
-[circle-url]: https://circleci.com/gh/ahmadnassri/create-library
-[circle-image]: https://img.shields.io/circleci/project/github/ahmadnassri/create-library/master.svg?style=for-the-badge&logo=circleci
+[circle-url]: https://circleci.com/gh/ahmadnassri/node-create
+[circle-image]: https://img.shields.io/circleci/project/github/ahmadnassri/node-create/master.svg?style=for-the-badge&logo=circleci
 
 [npm-url]: https://www.npmjs.com/package/@ahmadnassri/create-library
 [npm-image]: https://img.shields.io/npm/v/@ahmadnassri/create-library.svg?style=for-the-badge&logo=npm
