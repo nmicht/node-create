@@ -3,7 +3,7 @@ _extends: .github
 repository:
   name: node-create
   description: an opinionated npm package template
-  topics: npm, init, template
+  topics: npm, init, create, initializer
   homepage: https://www.ahmadnassri.com/
   private: false
   has_issues: true

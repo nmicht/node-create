@@ -5,7 +5,7 @@ executors:
     working_directory: ~/src
 
     docker:
-      - image: ahmadnassri/build-essential:latest
+      - image: ahmadnassri/build-essential
 
 commands:
   persist:
