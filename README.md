@@ -12,7 +12,7 @@
 ## Usage
 
 ```bash
-npm init @ahmadnassri/library
+npm init @ahmadnassri
 ```
 
 ## How does this work?
