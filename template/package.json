@@ -26,6 +26,7 @@
     "lint:deps": "npx david --error404 --errorSCM --errorDepType",
     "lint:ec": "npx editorconfig-checker .",
     "lint:js": "npx eslint .",
+    "lint:md": "npx remark --quiet --frail .",
     "lint": "npx run-p lint:*",
     "open:coverage": "opener coverage/lcov-report/index.html",
     "test:tap": "tap test --100 --coverage-report=lcov --no-browser",
