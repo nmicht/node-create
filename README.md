@@ -32,7 +32,7 @@ npm init @ahmadnassri
 [circle-url]: https://circleci.com/gh/ahmadnassri/node-create
 [circle-image]: https://img.shields.io/circleci/project/github/ahmadnassri/node-create/master.svg?style=for-the-badge&logo=circleci
 
-[npm-url]: https://www.npmjs.com/package/@ahmadnassri/create-library
-[npm-image]: https://img.shields.io/npm/v/@ahmadnassri/create-library.svg?style=for-the-badge&logo=npm
+[npm-url]: https://www.npmjs.com/package/@ahmadnassri/create
+[npm-image]: https://img.shields.io/npm/v/@ahmadnassri/create.svg?style=for-the-badge&logo=npm
 
 [npm/init]: https://docs.npmjs.com/cli/init#description
