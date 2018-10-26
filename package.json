@@ -29,7 +29,7 @@
     "url": "https://github.com/ahmadnassri/node-create/issues"
   },
   "scripts": {
-    "lint:deps": "npx david --error404 --errorSCM --errorDepType",
+    "lint:deps": "npx updated",
     "lint:ec": "npx editorconfig-checker .",
     "lint:js": "npx eslint .",
     "lint:md": "npx remark --quiet --frail .",
