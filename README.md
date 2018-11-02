@@ -29,7 +29,7 @@ npm init @ahmadnassri
 [license-url]: LICENSE
 [license-image]: https://img.shields.io/github/license/ahmadnassri/node-create.svg?style=for-the-badge&logo=circleci
 
-[circle-url]: https://circleci.com/gh/ahmadnassri/node-create
+[circle-url]: https://circleci.com/gh/ahmadnassri/workflows/node-create
 [circle-image]: https://img.shields.io/circleci/project/github/ahmadnassri/node-create/master.svg?style=for-the-badge&logo=circleci
 
 [npm-url]: https://www.npmjs.com/package/@ahmadnassri/create

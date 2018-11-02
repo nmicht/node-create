@@ -26,7 +26,7 @@ import [name] from '@[org]/[name]'
 [license-url]: LICENSE
 [license-image]: https://img.shields.io/github/license/[org]/[name].svg?style=for-the-badge&logo=circleci
 
-[circle-url]: https://circleci.com/gh/[org]/[name]
+[circle-url]: https://circleci.com/gh/[org]/workflows/[name]
 [circle-image]: https://img.shields.io/circleci/project/github/[org]/[name]/master.svg?style=for-the-badge&logo=circleci
 
 [npm-url]: https://www.npmjs.com/package/@[org]/[name]
