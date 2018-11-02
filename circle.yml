@@ -1,20 +1,21 @@
 version: 2.1
 
 executors:
-  app:
-    working_directory: ~/src
-
+  builder:
     docker:
       - image: ahmadnassri/build-essential
 
 commands:
   persist:
     steps:
-      - persist_to_workspace: { root: ~/src, paths: . }
+      - persist_to_workspace:
+          root: .
+          paths: .
 
   attach:
     steps:
-      - attach_workspace: { at: "." }
+      - attach_workspace:
+          at: .
 
   install:
     steps:
@@ -24,20 +25,20 @@ commands:
 
 jobs:
   build:
-    executor: app
+    executor: builder
     steps:
       - checkout
       - install
       - persist
 
   lint:
-    executor: app
+    executor: builder
     steps:
       - attach
       - run: npm run lint
 
   release:
-    executor: app
+    executor: builder
     steps:
       - attach
       - run: npx semantic-release
